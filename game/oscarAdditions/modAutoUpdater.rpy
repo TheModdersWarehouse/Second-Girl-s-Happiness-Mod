@@ -24,7 +24,7 @@ init python:
 
     def updateChecker():
         try:
-            if not isUpToDate(modConfigPath, "https://raw.githubusercontent.com/TheModdersWarehouse/Second-Girl-s-Happiness-Mod-Mod/main/game/oscarAdditions/modConfig.txt"):
+            if not isUpToDate(modConfigPath, "https://raw.githubusercontent.com/TheModdersWarehouse/Second-Girl-s-Happiness-Mod/main/game/oscarAdditions/modConfig.txt"):
                 return True
             else:
                 return False

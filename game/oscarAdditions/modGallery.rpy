@@ -38,7 +38,7 @@ screen sceneGalleryMenu():
     add "#23272a"
 
     text "Oscar's Scene Gallery":
-        style "modHeader"
+        style "modTextHeader"
         xcenter 0.5
         ycenter 110
 
@@ -56,7 +56,7 @@ screen sceneGalleryMenu():
                 idle "/oscarAdditions/images/button.png"
                 hover Transform(im.MatrixColor("/oscarAdditions/images/button.png", im.matrix.brightness(0.2)))
             text "Back":
-                style "modBody"
+                style "modTextBody"
                 xcenter 0.5
                 ycenter 0.5
 
@@ -79,7 +79,7 @@ screen sceneGalleryMenu():
                     idle Transform(i[1], zoom=0.2)
                     hover Transform(im.MatrixColor(i[1], im.matrix.brightness(0.2)), zoom=0.2)
                 text i[0]:
-                    style "modBody"
+                    style "modTextBody"
                     xcenter 0.5
 
 screen sceneCharacterMenu(galleryCharacter="All"):
@@ -88,7 +88,7 @@ screen sceneCharacterMenu(galleryCharacter="All"):
     add "#23272a"
 
     text "[galleryCharacter] Scenes - Page [galleryPageNumber]":
-        style "modHeader"
+        style "modTextHeader"
         xcenter 0.5
         ycenter 110
 
@@ -109,7 +109,7 @@ screen sceneCharacterMenu(galleryCharacter="All"):
                 idle "/oscarAdditions/images/button.png"
                 hover im.MatrixColor("/oscarAdditions/images/button.png", im.matrix.brightness(0.2))
             text "Back":
-                style "modBody"
+                style "modTextBody"
                 xcenter 0.5
                 ycenter 0.5
 
@@ -124,7 +124,7 @@ screen sceneCharacterMenu(galleryCharacter="All"):
                     idle "/oscarAdditions/images/button.png"
                     hover im.MatrixColor("/oscarAdditions/images/button.png", im.matrix.brightness(0.2))
                 text "Next":
-                    style "modBody"
+                    style "modTextBody"
                     xcenter 0.5
                     ycenter 0.5
 

@@ -13,7 +13,7 @@ screen navigation():
             textbutton _("Start") action Start()
 
         else:
-
+            textbutton _("Mod Options") action Show("modOptions")
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")

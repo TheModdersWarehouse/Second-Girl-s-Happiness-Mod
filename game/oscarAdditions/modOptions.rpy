@@ -1,35 +1,38 @@
 init python:
     Gr = "{color=#0f0}"
 
-screen modWalkthroughOptions():
-    tag menu
+define mod = Character("OscarSix", color="#0f0")
+
+screen modOptions():
     modal True
 
     add "#23272a"
 
     vbox:
         xcenter 0.5
-        ypos 50
-        spacing 100
+        ypos 33
+        spacing 33
 
-        text "Walkthrough Options" style "modTextHeader"
+        text "Mod Options" style "modTextHeader"
 
-        text "Turn on and off character paths" style "modTextBody" xcenter 0.5
+        textbutton "Change In-Game Names" action ui.callsinnewcontext("changeIngameNames") text_style "modTextButtonHeader"
 
-    frame:
-        xcenter 0.5
-        ycenter 0.5
-        padding (20, 20)
-        grid 3 3:
-            spacing 50
-            style_prefix "check"
+        textbutton "Change Gallery Names" action ui.callsinnewcontext("changeGalleryNames") text_style "modTextButtonHeader"
 
-            textbutton "Amy's Paths":
-                action ToggleVariable("AmyPath", true_value="{color=#0f0}[Amy Path]", false_value="")
-
-    textbutton _("Return") action Hide("modWalkthroughOptions"):
-        text_color "#a11f1f"
-        text_hover_color "#ffffff"
-        text_size 50
+    textbutton _("Return") action Hide("modOptions"):
+        text_style "modTextButtonHeader"
         yanchor 1.0
-        pos (100, 980)
+        align (0.1, 0.9)
+
+label changeGalleryNames:
+    python:
+        persistent.y = renpy.input("Answer with your name.", default="Kyle")
+    mod "Gallery names successful changed"
+    return
+
+label changeIngameNames:
+    mod "Make sure to do this in the save you wish to change names for."
+    python:
+        y = renpy.input("Answer with your name.", default="Kyle")
+    mod "Names successful changed"
+    return
