@@ -103,7 +103,7 @@ screen sceneCharacterMenu(galleryCharacter="All"):
 
             imagebutton:
                 if galleryPageNumber == 1:
-                    action Show("sceneGalleryMenu"), Hide("sceneCharacterMenu")
+                    action Hide("sceneCharacterMenu"), ShowMenu("main_menu")
                 else:
                     action Function(galleryDecreasePageNumber)
                 idle "/oscarAdditions/images/button.png"
