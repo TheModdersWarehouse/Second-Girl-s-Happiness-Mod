@@ -1,6 +1,9 @@
 init python:
     Gr = "{color=#0f0}"
 
+    con = "{color=#009dff}[+1 Confidence]"
+    dom = "{color=#ffb300}[+1 Domination Practice]"
+
 define mod = Character("OscarSix", color="#0f0")
 
 screen modOptions():

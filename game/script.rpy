@@ -30,6 +30,7 @@ label start:
     $ kendrakiss = False
     $ knees = False
     $ bribestewardess = False
+    $ katrinastare = False
     "WARNING: This is a game meant for adults ages 18 and older.  Please close the game immediately if you are underage."
     scene salon1
     sty "Oh hey there!  Are you my 5:30?"
@@ -851,8 +852,10 @@ label planestart:
     scene plane4
     kat "Yeah forget about Kendra for now.  Let's enjoy first-class together."
     y "But there a few empty seats here, so it looks like people didn't show up for the flight or something.  Maybe I could talk to the stewardess about bumping Kendra up to first class with us."
-    jump week2a
-
+    if katdom == 1:
+        jump week2a
+    else:
+        jump week2b
 label week2a:
     scene plane1
     kat "[y] relax, you are stressing out way too much about this."
@@ -3765,7 +3768,7 @@ label lagoonresort:
     scene katrinaalcohol1
     kat "Hey [y]!  I was thinking we'd have your drinking party tonight.  I'm heading into town to pick up the alcohol."
     define kaw = Character("Kawika", color="#ffc0cb")
-    kat "Do you wanna tag along?"
+    kat "Do you wanna tag along?  I'll show you a cool trick if you do."
     menu:
         "Go ahead without me, I'm going to get some work done on my game":
             jump workingremotely
@@ -3773,6 +3776,7 @@ label lagoonresort:
             jump katrinaalcohol
 label workingremotely:
     scene katrinaalcohol1
+    $ katrinastare = False
     y "Sorry Katrina, I was actually thinking about how nice working remotely is.  I'd like to keep at it for now."
     kat "Sure [y]!  I'll see if Emily wants to go.  Maybe we'll stop and get her the binoculars she was talking about."
     y "Yeah she'll like that.  See you later!"
@@ -4691,6 +4695,7 @@ label streaming3:
     kat "I hope you enjoyed the end of the stream [y]!  Next time I hope you join us!  We'll have all kinds of fun under the table with Emily!"
     jump poolkatemily1
 label poolkatemily1:
+    $ renpy.end_replay()
     scene poolchat3
     "When you get back you find Katrina floating in the pool and decide to join her."
     if katharem == True:
@@ -5120,12 +5125,21 @@ label katrinahike1:
     jump hike2
 
 label katrinahike2:
-    scene hike9
+    scene hikingwithkatrina1
     kat "Ok, down on your knees for maximum romantic effect!"
     k "That's a weird idea of romance Katrina!"
+    scene hikingwithkatrina2
     "You drop down to your knees."
-    kat "Now kiss my feet!  They are tired from the long hike!"
-    "Emily snaps a photo."
+    k "Wow, I can't believe you're really doing it!  What's wrong with you [y]?"
+    kat "It's just for fun Kendra.  I didn't say anything when you were getting your photo with him."
+    kat "Now kiss my feet [y]!  They are tired from the long hike!"
+    scene hikingwithkatrina3
+    "Kendra looks around clearly looking for backup on whether this is weird or not."
+    "Emily has a strange far-off look on her face, and Gianna actually is staring at you as if she were a little jealous."
+    "What was that?  Did Gianna just mutter something under her breath about wishing she was in the picture as well?"
+    scene hikingwithkatrina4
+    "It was so quiet you barely heard it.  From the sudden tensing of Kendra's shoulders it looks like she must have heard it as well."
+    "Emily snaps a photo and Kendra sighs and lets it drop."
     kat "Send this to me and [y], and [y], make sure to use this as the wallpaper on your phone."
     jump hike2
 
@@ -5249,7 +5263,1700 @@ label boattour1:
     scene boattour12
     e "GUYS I THINK I SEE SOMETHING!"
     e "[y] get your phone ready!"
+    jump chapter4
     "PLEASE SAVE YOUR GAME."
+    jump chapter4
     "If you've liked this game and aren't already supporting, please consider supporting me on Patreon at www.patreon.com/obrecht13.  It's only $3 for the current version of the game and it'd really help me a lot."
+    jump chapter4
     "The next update will come out in late October."
+    jump chapter4
+label chapter4:
+    scene whale1a
+    $ dompractice = 0
+    "Time seems to slow down as you see a whale begin to crest the water."
+    g "I think that's it!!"
+    "You leap to your feet and aim your phone."
+    "Somewhere off to your left you hear a splash."
+    scene whale2a
+    "You feel yourself start to slip, but Gianna and Emily grab onto you and hold you in place."
+    "You aim the phone as best you can and press the shutter button."
+    "You hear a series of rapid clicks since you had the phone in burst mode."
+    alii "That's it!"
+    "A split second later the whale is back under the water."
+    scene whale3
+    "Emily grabs your phone and starts to open the photo album."
+    g "Did you get it?"
+    y "I hope so!"
+    e "Please let it be here!  Please let it be here!"
+    alii "Tell me you got the picture, [y]!"
+    e "YES!  WE WON [y]!  We got the picture everyone!"
+    y "Where are your binoculars?"
+    e "They fell in the water when I grabbed you to hold you steady.  Totally worth it though!  Plus I bought the warranty."
+    scene whale4
+    "Celebrating on the top deck it's unclear who is the happiest between Emily, Alii, and Gianna."
+    "Emily is super stoked that she won the contest, but Gianna's genuine joy at seeing the whale, something she's actually interested in, seems purer."
+    "And Alii's happiness stems from a sense of relief that she'll get more business at the resort."
+    k "You better be careful, Emily, or you'll be joining your binoculars in the ocean!"
+    e "No way, I've got great balance!"
+    kat "Alii you too!  I'm not sure any of us could captain this boat back to shore!"
+    alii "Sorry!  It's been a while since I've been so worked up about something!"
+    alii "I'm going to head below and make Mai Tai's for everyone.  After that, we'll head back at a slow speed of two knots and maybe the whale will follow us back."
+    kat "Sounds good!"
+    if katharem == True:
+        jump aliikatrina1
+    else:
+        jump confidenceordomination
+
+label aliikatrina1:
+    scene whale5
+    "Alii returns from below deck after a few minutes with the drinks."
+    y "Wow, these are really good!  I've never had whipped cream like this."
+    scene whale8
+    alii "It's not whipped cream, it's lilikoi foam on top.  We gotta use the best to celebrate!"
+    scene whale5
+    e "Thanks Alii!"
+    "Looking around you notice that Katrina didn't get a drink."
+    "It looks like she's whispering something to Gianna."
+    scene whale6
+    "You strain your ears to listen.  All those other times of straining your ears to hear her are starting to pay off, or maybe you are getting better at reading lips."
+    kat "Gianna, I'm going to take Alii below deck for a few minutes, can you make sure everyone stays up here for a while?"
+    g "Yeah, I guess.  Why though?"
+    kat "I want to fool around with her, but don't want everyone to know.  If you do this for me I'll make you feel really good later."
+    g "Ok, should I even try to distract [y] too?"
+    kat "No, everyone but him.  I don't mind if he sees."
+    scene whale8
+    kat "Alii, I changed my mind and would like to try a Mai Tai with that foam you mentioned.  Could I please have one after all?"
+    alii "Sure Katrina, I'll go make you one."
+    kat "I'll come too, if you don't mind I'd love to see how they are made.  It'd be nice to have them again sometime when we're not in Hawaii."
+    alii "Let's go then!"
+    scene whale9
+    "As soon as Alii and Katrina disappear below deck you walk over to Gianna and whisper to her."
+    y "I overheard you and Katrina and if she's ok with me watching I'm not going to miss the show."
+    g "Ok, I'll keep everyone else chatting up here."
+    g "Hey Emily, now that you've won this contest what do you plan to do next?"
+    scene boatgirlv1e
+    "You climb back down to the bow of the ship and look in."
+    "The glass is particularly reflective so you have to get really close to see anything but the reflection of the sun."
+    "Looking in you see Katrina talking to Alii."
+    "You think you're going to need more practice at lip-reading if you ever are going to be able to tell what she's saying."
+    "Thinking about Katrina you wonder why she's doing this.  You know she's not a lesbian, so it's most likely her indulging her dominating personality again."
+    scene boatgirlv1a
+    "Sure enough after another moment Katrina steps forward into Alii's personal space."
+    "You hold your breath while you wait to see if Alii is going to pull away, but she doesn't."
+    "Katrina says a few more words to her that you can't hear through the glass and you resolve to google learning about lip reading later."
+    scene boatgirlv1b
+    "Katrina pulls Alii even closer, no longer speaking, but staring into her eyes."
+    "Having seen this trick before, you realize Alii is probably a goner.  Whatever Katrina wants, she's about to get."
+    scene boatgirlv1d
+    "Katrina seductively slides around behind Alii and glides her hands all over her body."
+    "Finally her right-hand slides up from behind Alii's ass to rub her pussy while he other hand cups Alii's breast."
+    scene boatgirlv1c
+    "She's lifts Alii's top off of her breast and gently rubs her nipple."
+    "Katrina seems to look up at you, but you're not sure if she can see you or not through the reflective window."
+    "More like she probably can only see her own reflection and is enjoying watching herself wield the power she has over Alii."
+    scene boatgirlv1g
+    "Pulling off Alii's bikini entirely, Katrina leans her back into what almost looks like a gymnastics move, other than the fact a moment later Katrina tongue is in her pussy."
+    "Seeing this you really want to join in, but you're not sure how Katrina would react.  You're not sure how Alii would react for that matter either."
+    "Maybe this would be a good test to see what kind of control Katrina really has.  If Alii stays you'd know it's significant."
+    menu:
+        "Save here if you want to see both scences"
+        "Head down and interrupt to see what happens.":
+            jump joininwithalii
+        "Continue spying so you don't risk making Katrina mad.":
+            jump spyonalii
+
+label joininwithalii:
+    "You decide to head below deck so you make your way to steps in the stern of the boat."
+    $ spyonalii = False
+    $ joinedalii = True
+    scene boatgirlv1h
+    alii "[y]!  Oh no, ummmm, this is not what it looks like!"
+    y "So you're not in a bridge pose while my friend eats you out?"
+    scene boatgirlv1i
+    "Katrina giggles into Alii's pussy."
+    "That's a good sign, looks like she's not mad at you for interrupting."
+    kat "Looks like [y] wants to join us."
+    kat "[y], pull out your cock and rub it all over Alii's face.  You'd like that right Alii?"
+    alii "That sounds so hot!  Just don't tell my parents when you meet them later this week."
+    scene boatgirlv1j
+    "You pull it out and slide it over Alii's face as Katrina told you."
+    "You slide it over Alii's lips, but she doesn't start blowing you."
+    "She moans pretty loud though."
+    alii "I can't believe this is happening!"
+    scene boatgirlv1k
+    kat "Yeah, this is amazing!  How's it going up there [y]?"
+    y "Amazing as you said, I've never done anything like this before!"
+    kat "If I was a guy I'd totally rub my cock over everyone's face.  It might be literally the sexiest thing you can do."
+    y "I don't know, I think getting a blow job might be slightly better than this."
+    kat "But look how submissive she looks!  Her letting you do this and then you cumming on her face is the most submissive thing she could do."
+    y "I don't know about that.  I think her swallowing my cum would be more submissive."
+    kat "What do you think Alii?  Which would make you feel more submissive?"
+    scene boatgirlv1j
+    alii "Are you guys seriously arguing about something like this while I'm in this position?"
+    y "Ok, how about this?  I'll cum on your face this time and then when I come back later this week as part of the prize you'll swallow and tell me which was more submissive."
+    "Although the stimulation to your dick isn't as much as it would have been if you were in her mouth, you soon feel yourself building towards a climax."
+    scene boatgirlv1l
+    "You unload all over her face and she smiles."
+    kat "Get a good look [y]!  In a few days, you have to compare this to when she swallows and I'm gonna need a 500-word essay on which was more submissive."
+    y "My first psychology report huh?"
+    scene boatgirlv1m
+    alii "Ummm, so Katrina, do you still want that Mai Tai."
+    kat "Of course!"
+    y "I'll take another one too!"
+    alii "Ok, I'll be up with them in a few minutes, after I make them and clean up a bit."
+    $ renpy.end_replay()
+    scene whale7
+    "Back on deck, everyone continues enjoying their Mai Tai's."
+    kat "The lilikoi foam is really great!  Glad I changed my mind!"
+    jump docking
+
+label spyonalii:
+    $ spyonalii = True
+    $ joinedalii = False
+    "It's not worth the risk of making Katrina mad, and anyway this is better than watching porn!"
+    scene boatgirlv1n
+    "Not able to maintain that crazy position for too long eventually Katrina lays Alii lay down on her back."
+    "She doesn't stop eating her out though."
+    scene boatgirlv1f
+    "Even though the glass you think you can make out the sounds of Alii moaning."
+    "Despite the time with Gianna being Katrina's first, she appears to be mastering giving women pleasure."
+    scene boatgirlv1n
+    "You watch as a shudder passes through Alii's legs.  Undoubtedly Katrina just gave her an amazing orgasm."
+    scene boatgirlv1o
+    "Katrina gets up and walks out, leaving Alii laying there on the floor in post-orgasmic bliss."
+    scene whale7
+    "You return to the top deck and after a couple more minutes Alii comes up with Katrina's drink."
+    kat "The lilikoi foam is really great!  Glad I changed my mind!"
+    jump docking
+
+label confidenceordomination:
+    scene whale7
+    "Alii returns from below deck after a few minutes with the drinks."
+    y "Wow, these are really good!  I've never had whipped cream like this."
+    scene whale8
+    alii "It's not whipped cream, it's lilikoi foam on top.  We gotta use the best to celebrate!"
+    scene whale5
+    e "Thanks Alii!"
+    if katrinastare == True:
+        jump aliidominationpractice
+    else:
+        jump aliiconfidencepractice
+
+label aliidominationpractice:
+    scene whale10
+    $ dompractice += 1
+    "As the girls continue to chat, Katrina takes you aside."
+    kat "Hey remember back at the bar when we got the Oahu Overwhelm for free?"
+    y "Yeah, with the whole staring deal."
+    kat "You know, this would be the perfect time to practice, just ask Alii below deck."
+    y "You think I could do it?"
+    kat "I do.  It's easier in these kinds of situations.  Remember I told you that thinking about what the other person is thinking about is a key factor."
+    y "And I guess we know what she'll be thinking about, the whale picture!"
+    kat "Exactly!"
+    scene whale8
+    y "Hey Alii, do you think you could teach me to make these Mai Tai's?  It'd be nice to have them again when we're back at home!"
+    alii "Sure, [y]!  Let's go below deck to the bar and I'll give you a quick lesson!"
+    scene boatgirlv2a
+    "The moment you are below deck you grab Alii and stare into her eyes."
+    "The aggressiveness of this isn't what you're accustomed to, but you think this is how Katrina would do it."
+    "You push those thoughts out of your head though and focus on her."
+    "You think about how nervous she must be now that you grabbed her below deck and you try to put yourself into her head."
+    "You think about how relieved she must be about the whale sighting potentially saving the resort."
+    "Then you latch onto a thought about how the Mai Tai's are made and you know you have her."
+    scene boatgirlv2b
+    "On an impulse, you snatch the flower out of Alii's hair.  She was wearing it the other day too."
+    "Maybe it's like with Gianna's jewelry.  That she's attached somehow and this will tip her over the edge."
+    "Sure enough she lets out a low moan and sinks down to her knees."
+    "Remembering that Katrina said you need to now force your own thoughts you imagine her giving you a blow job as hard as you can."
+    scene boatgirlv2c
+    "You toss the flower on the ground, thinking hard that it's no longer important."
+    "You understand to her it's a symbol and while you don't fully understand what it represents to her, the act of throwing it on the floor is also a symbol."
+    "This is as far as observing Katrina has gotten you.  You aren't a dominating person by nature, but hopefully, all these psychological tricks have worked."
+    y "Alii, pull down my shorts, and suck my cock."
+    scene boatgirlv2d
+    "You hold in a sigh of relief as she obeys your command, having no idea what you were going to do if she refused, or worse yet, screamed."
+    "You place your hand on the back of her head, hoping that this further asserts your dominance."
+    "Later you'll need to ask Katrina for more psychological tips.  This kind of thing isn't second nature to you like it is to her, but you do find you enjoy it."
+    scene boatgirlv2e
+    "And now you realize why Katrina likes this kind of thing so much.  The blowjob is great, but the feeling of having successfully dominating Alii feels even better in a way."
+    "You pull her head a little deeper as you relish the control you have over her."
+    scene boatgirlv2f
+    y "Swallow my cum."
+    "You try to say it in a commanding voice."
+    "Giving her a simple direct order is probably your best bet for maintaining your dominating facade until you've fully mastered this kind of thing."
+    "You cum in her mouth and she swallows every drop."
+    scene boatgirlv2g
+    "Pulling your shorts back on, you head for the door."
+    alii "Don't you want to learn to make the Mai Tai's?"
+    y "No."
+    scene whale8
+    "Back on deck you notice Alii glancing your way every so often as you head back towards the resort, but she doesn't say anything."
+    scene whale7
+    "The rest of the voyage passes uneventfully though the overall attitude is quite cheerful at having photographed the whale."
+    "You hope it's following after you and will find a new home close to the resort."
+    "In a way, the whale song playing over the hydrophone was a psychological trick as well, you muse."
+    "Funny how you can use psychology so often to get people and creatures to do what you want.  You never really thought about this kind of thing before.  Katrina must really be rubbing off on you."
+    jump docking
+
+label aliiconfidencepractice:
+    scene whale8
+    "Maybe it's the alcohol, but you can't help but notice how attractive Alii is."
+    "It seems like she's glancing your way too from time to time and meeting your gaze."
+    menu:
+        "Try seducing Alii below deck. [con]":
+            jump aliiconfidence
+        "Just enjoy the day with your friends.":
+            jump noalii
+
+label aliiconfidence:
+    scene whale9
+    $ confidence += 1
+    $ fuckedalii = True
+    "Realizing you may need some help, you approach Gianna."
+    "Hopefully the whole thing with Gianna's jewelry that Katrina suggested will have her more interested in helping you than in feeling jealous."
+    y "Gianna, I'm thinking about trying to seduce Alii below deck, do you think you could keep everyone chatting up here for a few minutes?"
+    g "Oh wow, I thought I saw her checking you out a couple of times!  Good luck!"
+    scene whale8
+    y "Hey Alii, do you think you could teach me to make these Mai Tai's?  It'd be nice to have them again when we're back at home!"
+    alii "Sure, [y]!  Let's go below deck to the bar and I'll give you a quick lesson!"
+    scene boatgirlv3a
+    y "I was hoping to get to spend a little alone time with you."
+    alii "Yeah, I was wondering if you would make a move, I kind of didn't think you would since you have so many attractive friends on this trip with you."
+    scene boatgirlv3b
+    y "Well let's not waste any time!"
+    "You pick her up and she giggles."
+    alii "Oh wow!  You just take what you want huh?"
+    scene boatgirlv3c
+    y "Better than waiting forever for nothing to ever happen."
+    "She wraps her legs around you and you kiss."
+    "Thinking fast, you begin walking her towards the bar."
+    scene boatgirlv3d
+    y "There we go."
+    y "Given the choice of what Hawaiian delicacy I'd want at the bar I'd chose you over a Mai Tai every time!"
+    y "Now let's get these bikini bottoms off of you."
+    "You hook your fingers in the straps and yank them off of her."
+    scene boatgirlv3e
+    "You spread her legs and start eating her out."
+    "You must be doing a good job because she moans and tries to get her top off, but she doesn't have the focus and ends up just leaving it dangling from her chest."
+    scene boatgirlv3f
+    "As much as you'd love to keep doing this, you realize you don't have a lot of time."
+    y "Let's see if you're wet enough for the main event!"
+    "You check her pussy and find her dripping."
+    y "Looks like you're ready!"
+    scene boatgirlv3g
+    "Grabbing her off the bar you spin her around and thrust into her from behind."
+    "She lets out a loud moan as you go balls deep."
+    alii "Oh god, I'm cumming already [y]!"
+    y "That didn't take long!"
+    alii "You're being so aggressive!  I love it and I just can't help myself!"
+    scene boatgirlv3h
+    y "You like aggressive guys huh?"
+    "You grab the front of her bikini top and pull it off of her and onto the bar."
+    y "Take a good look Alii, from now on whenever you serve drinks at the bar remember the sight of your top sitting here while you got plowed from behind by a guy you barely knew."
+    alii "This is so hot!"
+    "Continuing to thrust into her, you feel your orgasm start to build."
+    y "I'm gonna cum on this cute Hawaiian ass of yours!"
+    alii "Do it!"
+    scene boatgirlv3i
+    "You pull out and unload all over her ass and lower back."
+    "She's looking directly at her bikini top, probably burning the image into her head just like you told her."
+    "When you're done you give her ass a playful slap and pull your shorts back on."
+    scene boatgirlv3j
+    alii "So you still want me to teach you to make the Mai Tai's or...."
+    y "Nah, just bring me another one.  I'm heading up."
+    y "And look forward to round-two when Emily and I come back later in the week."
+    alii "Oh I will [y]!  I hope that's a promise!"
+    scene whale8
+    "Back on deck you notice Alii glancing your way every so often as you head back towards the resort, but she doesn't say anything."
+    scene whale7
+    "The rest of the voyage passes uneventfully though the overall attitude is quite cheerful at having photographed the whale."
+    "You hope it's following after you and will find a new home close to the resort."
+    jump docking
+
+label noalii:
+    $ fuckedalii = False
+    "You decide against trying to seduce Alii."
+    "It'd be hard to get away with it and if you ever really want to start dating one of your friends here then getting caught would work against you."
+    scene whale7
+    "Instead you just enjoy the happy atmosphere, your delicious drink, and the feel of the sea breeze on your face."
+    "The rest of the voyage passes uneventfully though the overall attitude is quite cheerful at having photographed the whale."
+    "You hope it's following after you and will find a new home close to the resort."
+    jump docking
+
+label docking:
+    scene whale11
+    "The boat reaches the dock at the resort and you all disembark."
+    alii "Congratulations on winning the contest!  See you again in a few days!"
+    e "You bet you will!"
+    k "Bye Alii!"
+    g "Bye!"
+    alii "Bye everyone!"
+    jump afterboat1
+
+label afterboat1:
+    scene hawaiiworking1
+    "Back at the house, you decide to get a little work done on your game."
+    "Putting the last finishing touches on a new mount template system you silently congratulate yourself."
+    "This will make adding new mounts so much easier in the future."
+    "Suddenly you get an idea."
+    if katharem == True:
+        jump afterboatkatrina1
+    if dompractice == 1:
+        jump afterboatkatrina4
+    if fuckedalii == True:
+        jump afterboatkatrina5
+    if fuckedalii == False:
+        jump afterboatkatrina6
+
+label afterboatkatrina1:
+    if katdom < 2:
+        jump afterboatkatrina2
+    else:
+        jump afterboatkatrina3
+label afterboatkatrina2:
+    "You kind of want some more time with Rachel."
+    "Fooling around with her on the movie set was a lot of fun, but too bad she has a boyfriend."
+    "Knowing he's addicted to your game though and knowing he's part-time surfing instructor gives you an idea."
+    "You could add a surfboard mount to your game and then email him a code to unlock it and say it's a beta test or something."
+    "You decide to go talk to Gianna and get her help getting his email address from Rachel without it being too weird."
+    "Before leaving the room you decide you could also show off the outfit Kendra picked out for you, so you quickly change."
+    scene boatdaykitchen1
+    "You decide to check the kitchen first, but find Katrina there instead of Gianna."
+    y "Hey Katrina, have you seen Gianna around?"
+    kat "Yeah, she was in the TV room.  She was still wearing her bikini too.  Weird!"
+    kat "You know how whenever Kendra's dad calls she gets a little crazy?"
+    scene boatdaykitchen2
+    y "Yeah."
+    kat "Next time he calls I want to try something, so don't get involved."
+    y "Ummm, ok.  Well, let me know how whatever you a trying goes ok?"
+    kat "Yeah, don't worry I will."
+    scene boatdaygianna1
+    "You find Gianna in the TV room like Katrina said."
+    "The lights are off as well as the television."
+    y "Hey Gianna, is everything ok."
+    g "Oh [y], hi.  I guess I was just lost in thought."
+    scene boatdaygianna2
+    y "You wanna talk about it?"
+    g "I was just thinking about Katrina and what's been happening on this trip."
+    g "Lately she's practically all I think about.  I never really considered her as more than a friend before this trip, but things have changed."
+    scene boatdaygianna3
+    y "I know what you mean."
+    g "Like on the boat when she wanted me to help keep everyone above deck while she went to seduce Alii.  I was jealous, but more than that I was happy because I was making her happy."
+    g "Like her happiness felt more important than mine, or at least they are connected now in some way."
+    g "Is that weird?"
+    scene boatdaygianna2
+    y "It's been like that between me and her as well.  I'm finding it helps to push back a little.  Just don't always let her get her way."
+    y "Katrina is great, but you are still your own person."
+    g "Thanks [y], I feel like you're the only person who understands."
+    scene boatdaygianna3
+    y "What if we do something to get your mind off things.  You had fun at the movie set with Rachel right?"
+    g "Yeah, that was super fun!"
+    y "Let's hang out with her again.  What about surfing lessons?  Her boyfriend gives them right?  Could you go get his contact info from her for me?"
+    scene boatdaygianna2
+    g "Sure!  She should be cleaning our house pretty soon.  I'll be on the lookout for her."
+    y "Great!  Can you get his phone number as well as his email address for me?  I'm thinking about sending him something from my game server."
+    g "Ok, I'll come to find you in a bit when I have it."
+    jump rachelsurf
+
+
+label afterboatkatrina3:
+    "You know how much Katrina likes dominating people and you think about how you might try to give her Rachel as a present."
+    "Katrina would probably enjoy dominating Rachel as much as she's enjoyed dominating you, Gianna, and Emily."
+    "And fooling around with Rachel on the movie set was a lot of fun, but too bad she has a boyfriend."
+    "Knowing he's addicted to your game though and knowing he's part-time surfing instructor gives you an idea."
+    "You could add a surfboard mount to your game and then email him a code to unlock it and say it's a beta test or something."
+    "You decide to go talk to Gianna and get her help getting his email address from Rachel without it being too weird."
+    "Katrina will be so pleased with you!"
+    "Before leaving the room you decide you could also show off the outfit Kendra picked out for you, so you quickly change."
+    scene boatdaykitchen1
+    "You decide to check the kitchen first, but find Katrina there instead of Gianna."
+    y "Hey Katrina, have you seen Gia...."
+    "Something in Katrina's expression causes the words to die in your throat."
+    "She stares you down for a moment before speaking."
+    kat "Where did you get that outfit?"
+    scene boatdaykitchen2
+    y "Kendra picked it out for me on our date.  Is there some problem with it or something?"
+    if katdom == 4:
+        jump katrinafulldom1
+    else:
+        jump afterboatkatrina3b
+
+label afterboatkatrina3b:
+    kat "I don't like it much, but I'll leave it up to you if you want to wear it or not."
+    scene boatdaykitchen1
+    kat "I'd prefer though if you'd continue to wear the outfit I picked out for you though.  It suits you way better."
+    y "I do want to make you happy Katrina, and on that note, I was wondering if you want to include Rachel in your harem."
+    kat "Funny that you should say the harem is mine.  It's your harem, [y].  Must have been a Freudian Slip."
+    scene boatdaykitchen2
+    y "Oh right!  Well, what about Rachel?  I think I know a way to trick her boyfriend and get her to spend some more time with us."
+    kat "Sure, sounds like it could make for a fun evening."
+    y "Great!  So do you know where Gianna is?  I need her help."
+    kat "I saw her a few minutes ago in the TV room.  She was still wearing her bikini too.  Weird!"
+    scene boatdaykitchen1
+    kat "You know how whenever Kendra's dad calls she gets a little crazy?"
+    y "Yeah."
+    kat "Next time he calls I want to try something, so don't get involved."
+    y "Ummm, ok.  Well, let me know how whatever you a trying goes ok?"
+    kat "Yeah, don't worry I will."
+    scene boatdaygianna1
+    "You find Gianna in the TV room like Katrina said."
+    "The lights are off as well as the television."
+    y "Hey Gianna, is everything ok."
+    g "Oh [y], hi.  I guess I was just lost in thought."
+    scene boatdaygianna2
+    y "You wanna talk about it?"
+    g "I was just thinking about Katrina and what's been happening on this trip."
+    g "Lately she's practically all I think about.  I never really considered her as more than a friend before this trip, but things have changed."
+    scene boatdaygianna3
+    y "I know what you mean."
+    g "Like on the boat when she wanted me to help keep everyone above deck while she went to seduce Alii.  I was jealous, but more than that I was happy because I was making her happy."
+    g "Like her happiness felt more important than mine, or at least they are connected now in some way."
+    g "Is that weird?"
+    scene boatdaygianna2
+    y "It's been like that between me and her as well.  Every time I feel like she wants something from me more often than not she gets it."
+    y "It's been happening for years, but it feels like this trip especially it's intensified.  I find myself wanting to make her happy all the time as well."
+    y "I'm not sure it's a bad thing though.  She's a wonderful person after all."
+    g "Thanks [y], I feel like you're the only person who understands."
+    scene boatdaygianna3
+    y "But if you're really worried about it, what if we do something to get your mind off things.  You had fun at the movie set with Rachel right?"
+    g "Yeah, that was super fun!"
+    y "Let's hang out with her again.  What about surfing lessons?  Her boyfriend gives them right?  Could you go get his contact info from her for me?"
+    scene boatdaygianna2
+    g "Sure!  She should be cleaning our house pretty soon.  I'll be on the lookout for her."
+    y "Great!  Can you get his phone number as well as his email address for me?  I'm thinking about sending him something from my game server."
+    g "Ok, I'll come to find you in a bit when I have it."
+    jump rachelsurf
+
+label katrinafulldom1:
+    "Katrina ignores your question."
+    kat "When you walked in you were trying to ask me something?"
+    y "Oh ummm, yeah, so earlier I was working on my game and thinking about things and well, I thought of a way we could spend more time with Rachel."
+    y "And I was wondering if you wanted to include her in your harem, and where Gianna was so I could get her help."
+    kat "Funny that you should say the harem is mine.  It's your harem, [y].  Must have been a Freudian Slip."
+    y "Oh right!  Well, what about Rachel?  I think I know a way to trick her boyfriend and get her to spend some more time with us."
+    kat "Sure, sounds like it could make for a fun evening."
+    y "Great!  So do you know where Gianna is?  I need her help."
+    scene boatdaykitchen1
+    kat "I saw her a few minutes ago in the TV room.  She was still wearing her bikini too.  Weird!"
+    kat "Go talk to her and then go wait for me in your room.  I want to speak to you about something."
+    scene boatdaygianna1
+    "You find Gianna in the TV room like Katrina said."
+    "The lights are off as well as the television."
+    y "Hey Gianna, is everything ok."
+    g "Oh [y], hi.  I guess I was just lost in thought."
+    scene boatdaygianna2
+    y "You wanna talk about it?"
+    g "I was just thinking about Katrina and what's been happening on this trip."
+    g "Lately she's practically all I think about.  I never really considered her as more than a friend before this trip, but things have changed."
+    scene boatdaygianna3
+    y "I know what you mean."
+    g "Like on the boat when she wanted me to help keep everyone above deck while she went to seduce Alii.  I was jealous, but more than that I was happy because I was making her happy."
+    g "Like her happiness felt more important than mine, or at least they are connected now in some way."
+    g "Is that weird?"
+    scene boatdaygianna2
+    y "It's been like that between me and her as well.  Every time I feel like she wants something from me more often than not she gets it."
+    y "It's been happening for years, but it feels like this trip especially it's intensified.  I find myself wanting to make her happy all the time as well."
+    y "I'm not sure it's a bad thing though.  She's a wonderful person after all."
+    g "Thanks [y], I feel like you're the only person who understands."
+    scene boatdaygianna3
+    y "But if you're really worried about it, what if we do something to get your mind off things.  You had fun at the movie set with Rachel right?"
+    g "Yeah, that was super fun!"
+    y "Let's hang out with her again.  What about surfing lessons?  Her boyfriend gives them right?  Could you go get his contact info from her for me?"
+    scene boatdaygianna2
+    g "Sure!  She should be cleaning our house pretty soon.  I'll be on the lookout for her."
+    y "Great!  Can you get his phone number as well as his email address for me?  I'm thinking about sending him something from my game server."
+    g "Ok, I'll come to find you in a bit when I have it."
+    jump katrinafulldom2
+
+
+label katrinafulldom2:
+    scene waitingforkatrina
+    "Back in your room the time ticks by at a snail's pace."
+    "You wonder what Katrina wants to talk about and why it's taking so long."
+    "Too nervous to work on your game you end up pacing back and forth."
+    "She's probably taking this long on purpose.  Another of her tricks to get inside your head."
+    "You feel like maybe you should be angry, but instead you just feel your desire for her intensifying."
+    scene mb3
+    "At last Katrina enters the room, wearing the same robe that you saw her in the day you arrived."
+    kat "Thanks for waiting, [y]."
+    y "I didn't mind."
+    kat "Oh good!  How'd it go with Gianna by the way?"
+    scene boatdaykatrina1
+    "Katrina makes herself comfortable on your bed."
+    y "Pretty well, she's going to get me the contact info for Rachel's boyfriend."
+    y "Why did you want me to wait here for you though?  Truth be told I was a little nervous.  You looked almost angry when you saw me in the kitchen at first."
+    kat "Sorry about that, I shouldn't have let it show.  I didn't like it when I saw you in that outfit."
+    y "What's wrong with it."
+    kat "It doesn't suit you, [y].  You've made a lot of positive life changes recently and your wardrobe should reflect that."
+    kat "This is a step backward towards the nerdy high school boy you used to be."
+    y "Kendra thought it looked nice."
+    scene boatdaykatrina2
+    kat "She's wrong.  Clothes are more than about looking nice.  They are about projecting yourself and about making you feel a certain way."
+    kat "Believe it or not, even your skull tank top is better than this outfit for this reason.  That was about you expressing yourself."
+    kat "So I want you to do me a favor.  Take off these clothes and throw them in the trash."
+    kat "I'll even reward you.  Don't think I didn't notice you trying to keep me chatting longer on the day we got here so you could try to get a look under my robe."
+    kat "Get rid of those clothes and I'll take my robe off and we'll fool around a little.  Fair trade right?"
+    scene boatdaykatrina1
+    y "I don't know Katrina, Kendra even bought these for me with her own money.  I wouldn't feel right throwing them in the trash."
+    kat "Ultimately that's up to you.  I'm trying to help you be a better you.  I hope you chose to trust me and to make me happy."
+    menu:
+        "Obey Katrina and throw away the clothes.":
+            jump katrinafulldom3
+        "Stand up to her and keep them. [Gr]\[-1 Katrina Dominance\]":
+            jump getofffulldompath
+
+label getofffulldompath:
+    $ katdom -= 1
+    y "I'm sorry Katrina, I just can't do it.  I hate to disappoint you, but I just can't throw the clothes away after they were so important to Kendra."
+    scene mb3
+    "Katrina gets up from the bed."
+    kat "Fine.  Have it your way [y]."
+    "She leaves and you wonder if you made the right choice."
+    scene hawaiiworking1
+    "After she leaves, you find yourself changing out of the clothes, though you still don't throw them out, and you start working on your plan."
+    jump rachelsurf
+
+label katrinafulldom3:
+    y "Yeah, you're right.  I don't need these clothes."
+    scene boatdaykatrina3
+    "You start by unbuttoning your vest and Katrina plays with the hem of the robe, revealing more and more of her leg."
+    kat "That's it, [y].  I'm glad you trust me.  I know what's best for us."
+    y "I know you do, Katrina."
+    scene boatdaykatrina4
+    "You toss your vest, shirt, and shoes towards the trashcan in the bathroom behind you and start removing your pants."
+    kat "Good boy, [y]!  Looks like I won't be needing my robe anymore."
+    scene boatdaykatrina5
+    "She pulls her robe off and poses for you on the bed."
+    kat "Like what you see?"
+    y "You look like a goddess!  And I love your tattoos so much!"
+    kat "They are nice, aren't they?  Hmmm, one more change I want to make on you though real quick."
+    scene boatdaykatrina6
+    "She moves towards the necklace on your nightstand that had come with the outfit she bought you."
+    "You notice that you are still wearing the watch Kendra picked along with the outfit you've just gotten rid of."
+    "Katrina doesn't seem to realize it was also picked out by Kendra.  Maybe you could at least keep the watch."
+    menu:
+        "Keep the watch.":
+            jump keepthewatch
+        "Throw the watch away too.":
+            jump dontkeepthewatch
+
+label keepthewatch:
+    $ keepwatch = True
+    scene boatdaykatrina7
+    kat "Now bend down so I can put this necklace back on you."
+    "You kneel down as she places it over your head."
+    kat "Now I promised we'd fool around a little.  Let's see if you can please me.  I want you to kiss my feet like we did on the trail.  They are still a little sore."
+    scene boatdaykatrina8
+    "She shifts to the other side of the bed."
+    "You realize she could have stayed on the side you were on and that she's purposefully making you walk around to reach her."
+    "Another little test of her control over you, but of course you obey."
+    "She leans back and you begin massaging her foot.  Meanwhile, she lightly strokes your hardening cock with her other one."
+    scene boatdaykatrina11
+    "You lightly kiss each one of her toes."
+    "Once you're given each on the proper attention you realize she's not smiling and you need to try harder, so you begin to suck on them."
+    kat "That feels amazing [y]!"
+    scene boatdaykatrina9a
+    "She smiles and you are so glad to be making her happy!"
+    "You continue sucking on her toes as she strokes your cock with her other foot."
+    "Just before you cum, she stops."
+    kat "You've earned another reward, come take a closer look at my pussy."
+    scene boatdaykatrina12
+    "You place your head between her thighs and move closer to start licking, but she traps her head before you get there."
+    kat "I just said that you could take a closer look, that's all you get for now."
+    scene boatdaykatrina13
+    "She squeezes her thighs tighter.  Not enough to hurt, but enough that you'd have to really struggle if you wanted to get away."
+    "Not that you do though.  Instead, you stare into her pussy, grateful to be seeing it up close for the first time."
+    kat "I think that's enough for now."
+    scene boatdaykatrina14
+    kat "Well that was a lot of fun, [y]!"
+    kat "I better let you get going with your plan for Rachel though.  See you in a bit!"
+    kat "Oh and one more thing.  Next time Kendra's dad calls her, don't interfere.  I want to try something."
+    "She heads out leaving your mind reeling a bit from your encounter."
+    jump rachelsurf
+
+label dontkeepthewatch:
+    $ keepwatch = False
+    "Keeping the watch feels a bit like lying to Katrina, even if she doesn't know you are, so you toss it into the bathroom trash as well."
+    scene boatdaykatrina7a
+    kat "Now bend down so I can put this necklace back on you."
+    "You kneel down as she places it over your head."
+    kat "Now I promised we'd fool around a little.  Let's see if you can please me.  I want you to kiss my feet like we did on the trail.  They are still a little sore."
+    scene boatdaykatrina8a
+    "She shifts to the other side of the bed."
+    "You realize she could have stayed on the side you were on and that she's purposefully making you walk around to reach her."
+    "Another little test of her control over you, but of course you obey."
+    "She leans back and you begin massaging her foot.  Meanwhile, she lightly strokes your hardening cock with her other one."
+    scene boatdaykatrina10
+    "You lightly kiss each one of her toes."
+    "Once you're given each on the proper attention you realize she's not smiling and you need to try harder, so you begin to suck on them."
+    kat "That feels amazing [y]!"
+    scene boatdaykatrina9
+    "She smiles and you are so glad to be making her happy!"
+    "You continue sucking on her toes as she strokes your cock with her other foot."
+    "Just before you cum, she stops."
+    kat "You've earned another reward, come take a closer look at my pussy."
+    scene boatdaykatrina12a
+    "You place your head between her thighs and move closer to start licking, but she traps her head before you get there."
+    kat "I just said that you could take a closer look, that's all you get for now."
+    scene boatdaykatrina13
+    "She squeezes her thighs tighter.  Not enough to hurt, but enough that you'd have to really struggle if you wanted to get away."
+    "Not that you do though.  Instead, you stare into her pussy, grateful to be seeing it up close for the first time."
+    kat "I think that's enough for now."
+    scene boatdaykatrina14
+    kat "Well that was a lot of fun, [y]!"
+    kat "I better let you get going with your plan for Rachel though.  See you in a bit!"
+    kat "Oh and one more thing.  Next time Kendra's dad calls her, don't interfere.  I want to try something."
+    "She heads out leaving your mind reeling a bit from your encounter."
+    jump rachelsurf
+
+
+
+label afterboatkatrina4:
+    "Dominating Alii on the boat was a lot of fun."
+    "You wonder if you could do something like that with Rachel."
+    "And fooling around with Rachel on the movie set was a lot of fun, but too bad she has a boyfriend."
+    "Knowing he's addicted to your game though and knowing he's part-time surfing instructor gives you an idea."
+    "You could add a surfboard mount to your game and then email him a code to unlock it and say it's a beta test or something."
+    "You decide to go talk to Gianna and get her help getting his email address from Rachel without it being too weird."
+    "Before leaving the room you decide you could also show off the outfit Kendra picked out for you, so you quickly change."
+    scene boatdaykitchen1
+    "You decide to check the kitchen first, but find Katrina there instead of Gianna."
+    kat "Just the guy I wanted to see!  How did everything go below deck with Alii?"
+    scene boatdaykitchen2
+    y "Great!  I did everything you taught me in the bar."
+    y "I even improvised a little and pulled that white flower out of her hair kind of like when I took Gianna's rings and bracelet."
+    kat "And did it work?"
+    y "Yeah, a moment later I had her blowing me!"
+    kat "Wow!  Sounds like I couldn't have done it any better myself!"
+    scene boatdaykitchen1
+    kat "People don't realize that the things they wear and the accessories they like can have such an impact when they are taken away."
+    kat "In a way, it's like losing a part of your identity, and when someone like me, or now like you, comes along we can use it to our advantage."
+    scene boatdaykitchen2
+    y "I've been thinking about psychology non-stop!  I can see now why you are so into it!"
+    y "I was even thinking about how we got inside the whale's head today."
+    scene boatdaykitchen1
+    kat "I'm really glad to hear that [y]!  It's great we are starting to share a common interest!  There's so much more I can teach you too!"
+    y "On that subject, I have an idea for Rachel.  I'm trying to track down Gianna to help me with it, have you seen her?"
+    kat "Yeah, she was in the TV room.  She was still wearing her bikini too.  Weird!"
+    scene boatdaygianna1
+    "You find Gianna in the TV room like Katrina said."
+    "The lights are off as well as the television."
+    y "Hey Gianna, is everything ok."
+    g "Oh [y], hi.  I guess I was just lost in thought."
+    scene boatdaygianna2
+    y "You wanna talk about it?"
+    g "I was just thinking about you, and our trip, and about what happened on the boat, and the future."
+    scene boatdaygianna3
+    y "Sounds like you have a lot on your mind.  Do you want to talk about it?"
+    g "Yeah, I think that would help.  I want to talk about the boat first and I hope I don't sound too weird."
+    y "What do you mean?"
+    scene boatdaygianna2
+    g "Well, when you asked me to keep everyone on the top deck so you could spend some time with Alii, I felt jealous, but I also felt happy about it."
+    g "I'm just going to come right out and say it.  I've developed feelings for you [y]."
+    g "And even though I'm kind of hoping I might become your girlfriend, the thought of you with Alii turned me on.  I wanted to help you get her."
+    g "See I told you I'd sound weird."
+    scene boatdaygianna3
+    y "Everyone has a fetish or two, Gianna.  You're not the only girl who likes to see the guy she's interested in claim other women."
+    g "I'm so embarrassed!"
+    y "It's not something to be embarrassed about.  I'm really glad you feel like you can trust me enough to share your feelings with me."
+    scene boatdaygianna2
+    g "I guess what I'm saying is, that if you want a wingman, or wingwoman in this case, I'll ready to help."
+    "Gianna squirms uncomfortably."
+    g "Can we change the subject for now though please!"
+    scene boatdaygianna3
+    y "Of course, what else do you want to talk about?"
+    g "Are you thinking of hiring any employees?"
+    y "Yeah, probably eventually.  I do like working on my own, but the game has grown so large I hardly have any time to myself anymore."
+    scene boatdaygianna2
+    g "If you do decide to hire anyone, I'll be done with my Bachelor's Degree in Business Administration soon and I'd like to apply for a position as your Personal Assistant if you decide you want one."
+    y "I haven't thought much about it, but that does sound pretty helpful."
+    scene boatdaygianna3
+    y "When we get back let's make an appointment to speak at the office I'm renting."
+    y "We could have a formal interview and talk about the direction the game is going and the direction a potential company could go and see if what's we both want."
+    g "I'd like that."
+    y "Ok, well I hate to change the subject back again, but...."
+    scene boatdaygianna2
+    g "Oh geez, what is it [y]?"
+    y "I was looking for you just now to see about Rachel."
+    g "Are you interested in her?"
+    scene boatdaygianna3
+    y "I think it'd be fun to spend a little more time with her.  You had fun with her on the movie set too right?"
+    g "Yeah, so much fun!"
+    y "Well if you could get me her boyfriend's contact info I think we could spend more time with her tonight."
+    g "You want her boyfriend there too?"
+    y "No, but I have an idea to make it seem like I do, but to keep him away at the same time, by asking for surfing lessons."
+    scene boatdaygianna2
+    g "Ok, when she arrives to start cleaning I'll track her down and get his contact info."
+    g "I'll bring it to you when I have it."
+    jump rachelsurf
+
+
+label afterboatkatrina5:
+    "Fucking Alii on the boat was a lot of fun and a big confidence boost."
+    "Maybe you could keep that going by adding Rachel to your list of recent conquests."
+    "Fooling around with her on the movie set was a lot of fun, but too bad she has a boyfriend."
+    "Knowing he's addicted to your game though and knowing he's part-time surfing instructor gives you an idea."
+    "You could add a surfboard mount to your game and then email him a code to unlock it and say it's a beta test or something."
+    "You decide to go talk to Gianna and get her help getting his email address from Rachel without it being too weird."
+    "Before leaving the room you decide you could also show off the outfit Kendra picked out for you, so you quickly change."
+    scene boatdaykitchen1
+    "You decide to check the kitchen first, but find Katrina there instead of Gianna."
+    y "Hey Katrina, have you seen Gianna around?"
+    kat "Yeah, she was in the TV room.  She was still wearing her bikini too.  Weird!"
+    scene boatdaygianna1
+    "You find Gianna in the TV room like Katrina said."
+    "The lights are off as well as the television."
+    y "Hey Gianna, is everything ok."
+    g "Oh [y], hi.  I guess I was just lost in thought."
+    scene boatdaygianna2
+    y "You wanna talk about it?"
+    g "I was just thinking about you, and our trip, and about what happened on the boat, and the future."
+    scene boatdaygianna3
+    y "Sounds like you have a lot on your mind.  Do you want to talk about it?"
+    g "Yeah, I think that would help.  I want to talk about the boat first and I hope I don't sound too weird."
+    y "What do you mean?"
+    scene boatdaygianna2
+    g "Well, when you asked me to keep everyone on the top deck so you could spend some time with Alii, I felt jealous, but I also felt happy about it."
+    g "I'm just going to come right out and say it.  I've developed feelings for you [y]."
+    g "And even though I'm kind of hoping I might become your girlfriend, the thought of you with Alii turned me on.  I wanted to help you get her."
+    g "See I told you I'd sound weird."
+    scene boatdaygianna3
+    y "Everyone has a fetish or two, Gianna.  You're not the only girl who likes to see the guy she's interested in claim other women."
+    g "I'm so embarrassed!"
+    y "It's not something to be embarrassed about.  I'm really glad you feel like you can trust me enough to share your feelings with me."
+    scene boatdaygianna2
+    g "I guess what I'm saying is, that if you want a wingman, or wingwoman in this case, I'll ready to help."
+    "Gianna squirms uncomfortably."
+    g "Can we change the subject for now though please!"
+    scene boatdaygianna3
+    y "Of course, what else do you want to talk about?"
+    g "Are you thinking of hiring any employees?"
+    y "Yeah, probably eventually.  I do like working on my own, but the game has grown so large I hardly have any time to myself anymore."
+    scene boatdaygianna2
+    g "If you do decide to hire anyone, I'll be done with my Bachelor's Degree in Business Administration soon and I'd like to apply for a position as your Personal Assistant if you decide you want one."
+    y "I haven't thought much about it, but that does sound pretty helpful."
+    scene boatdaygianna3
+    y "When we get back let's make an appointment to speak at the office I'm renting."
+    y "We could have a formal interview and talk about the direction the game is going and the direction a potential company could go and see if what's we both want."
+    g "I'd like that."
+    y "Ok, well I hate to change the subject back again, but...."
+    scene boatdaygianna2
+    g "Oh geez, what is it [y]?"
+    y "I was looking for you just now to see about Rachel."
+    g "Are you interested in her?"
+    scene boatdaygianna3
+    y "I think it'd be fun to spend a little more time with her.  You had fun with her on the movie set too right?"
+    g "Yeah, so much fun!"
+    y "Well if you could get me her boyfriend's contact info I think we could spend more time with her tonight."
+    g "You want her boyfriend there too?"
+    y "No, but I have an idea to make it seem like I do, but to keep him away at the same time, by asking for surfing lessons."
+    scene boatdaygianna2
+    g "Ok, when she arrives to start cleaning I'll track her down and get his contact info."
+    g "I'll bring it to you when I have it."
+    jump rachelsurf
+
+label afterboatkatrina6:
+    "Thinking back to the boat you can't help but thinking that you missed an opportunity with Alii."
+    "You decide not to miss a similar opportunity with Rachel."
+    "Besides, you know Gianna and Kendra both really like her, and Kendra did say that she's waiting until after the trip to see if you'd like to officially date, so it's not like you're committed."
+    "Fooling around with her on the movie set was a lot of fun, but too bad she has a boyfriend."
+    "Knowing he's addicted to your game though and knowing he's part-time surfing instructor gives you an idea."
+    "You could add a surfboard mount to your game and then email him a code to unlock it and say it's a beta test or something."
+    "You decide to go talk to Gianna and get her help getting his email address from Rachel without it being too weird."
+    "Before leaving the room you decide you could also show off the outfit Kendra picked out for you, so you quickly change."
+    scene boatdaykitchen1
+    "You decide to check the kitchen first, but find Katrina there instead of Gianna."
+    y "Hey Katrina, have you seen Gianna around?"
+    kat "Yeah, she was in the TV room.  She was still wearing her bikini too.  Weird!"
+    scene boatdaygianna1
+    "You find Gianna in the TV room like Katrina said."
+    "The lights are off as well as the television."
+    y "Hey Gianna, is everything ok."
+    g "Oh [y], hi.  I guess I was just lost in thought."
+    scene boatdaygianna2
+    y "You wanna talk about it?"
+    g "I was just thinking about the end of college and the future."
+    g "Are you thinking of hiring any employees?"
+    y "Yeah, probably eventually.  I do like working on my own, but the game has grown so large I hardly have any time to myself anymore."
+    scene boatdaygianna2
+    g "If you do decide to hire anyone, I'll be done with my Bachelor's Degree in Business Administration soon and I'd like to apply for a position as your Personal Assistant if you decide you want one."
+    y "I haven't thought much about it, but that does sound pretty helpful."
+    scene boatdaygianna3
+    y "When we get back let's make an appointment to speak at the office I'm renting."
+    y "We could have a formal interview and talk about the direction the game is going and the direction a potential company could go and see if what's we both want."
+    g "I'd like that."
+    y "Let's try to focus on fun while we're on vacation though!  I was thinking about how fun making the movie was with Rachel.  I was thinking maybe we should all hang out again tonight."
+    y "Do you think you could get her boyfriend's phone number and email address?"
+    scene boatdaygianna2
+    g "Yeah, you want to meet her boyfriend?"
+    scene boatdaygianna3
+    y "I was thinking about asking him for surfing lessons and surprising him with an exclusive in-game item in his email since I know he plays."
+    scene boatdaygianna2
+    g "That sounds great!  When she arrives to start cleaning I'll track her down and get his contact info."
+    g "I'll bring it to you when I have it."
+    jump rachelsurf
+
+label rachelsurf:
+    $ renpy.end_replay()
+    scene hawaiiworking1
+    "You think about how you can use the new mount template to create something for Rachel's boyfriend."
+    "You decide on a surfboard since it's basically just a 2d rectangle, and quickly model it in {i}Blender{/i}."
+    "Then you edit the properties so it can only be used in shallow water."
+    "After a while, you hear a knock at the door."
+    g "Hey [y]!  Are you in here?  I got the info!"
+    scene boyfriendinfo
+    y "Holy shit!  Gianna, you're topless!"
+    g "It's called flirting!  I wanted to surprise you!"
+    y "I think this is the first time a girl has flirted with me and come right out and said she's flirting!"
+    g "Nice!  Anyway, I got Rachel's boyfriend's contact info.  His name is Kainalu and his email address is Kainalu2000 at surfguy.com."
+    "She gives you his number as well and you thank her."
+    scene hawaiiworking1
+    "You send Kainalu a text message letting him know you heard from Rachel that he gives surfing lessons and asking to meet up with your group at 4 PM at the beach."
+    "He takes quite a while to respond, but eventually confirms he'll be there."
+    "Then you send him an email from the {i}Caelum Besieged{/i} server."
+    y "Dear Kainalu2000, we have searched our database for players whose handle or email address contains the word SURF for an exclusive offer."
+    y "You have been selected to beta test a new limited-edition surfboard mount before it becomes available for purchase."
+    y "After the testing period is complete, you will be able to keep the surfboard free of charge."
+    y "If you have time to test it in the next 12 hours and send an email with your impressions, you may be selected for future beta testing opportunities as well as in-game merchandise."
+    "Well, that's that!  In a little while, we'll see if he still shows up to teach us surfing or if he chooses {i}Caelum Besieged{/i}."
+label rachelsurf2:
+    scene boatdayvolleyball1
+    "At 4 PM you and the girls head to the beach to play a little volleyball while you wait for Rachel and Kainalu."
+    "It's kind of a win-win for you.  If he shows up you'll have a fun surfing lesson with everyone.  And if he doesn't, well then you'll get a fun evening with your friends and Rachel."
+    "It isn't long before Rachel shows up.... alone."
+    scene boatdayvolleyball2
+    r "Guys, I have some really bad news.  My boyfriend isn't coming to give the surf lesson."
+    g "What happened?  Why not?"
+    r "He called me and told me to meet you here and say he couldn't make it.  Apparently playing a video game is more important to him!"
+    r "This is the last straw.  I think I'm going to have to break up with him."
+    scene boatdayvolleyball3
+    g "That's terrible, Rachel!"
+    r "It's been a long time coming.  {i}Caelum Besieged{/i} isn't the first game he's been addicted to, it's just the latest in a long line of them."
+    g "Listen, why don't you hang out with us tonight?  We're playing volleyball.  Please join us and we'll cheer you up!"
+    r "Ok, thanks Gianna, I'd like that."
+    scene boatdayvolleyball4
+    "You all do your best to cheer Rachel up while you play."
+    "You even pick her up on your shoulders so she can try to spike the ball."
+    "Unfortunately there is a big collision between her, Emily, and Gianna and she ends up falling backward off your shoulders."
+    scene boatdayvolleyball5
+    k "Is everyone ok?  That was quite a collision!"
+    g "Ugggg, did we score?  I didn't see which side of the net the ball fell on."
+    e "I'm pretty sure I blocked it with my face."
+    r "Guys, I think I twisted my ankle when I fell."
+    scene boatdayvolleyball6
+    "You and Kendra lean down to examine her."
+    k "Which one is it?"
+    r "It's my left ankle.  I'll probably be ok in a minute.  Just let me lay here for a moment."
+    k "You're covered with sand.  Do you want [y] to carry you back to the house?  We'll get you cleaned up."
+    r "Do you think you can carry me [y]?"
+    scene boatdayvolleyball7
+    y "Yeah, I can handle you easily, Rachel!"
+    y "Let's get you back up to the house and you can soak in the rose petal bathtub until your ankle feels better."
+    k "I'll have Gianna run ahead and get things ready."
+    scene boatdaybath1
+    "You find Gianna naked and waiting in the tub when you get back."
+    r "Sorry [y], I guess I got you all sandy too."
+    y "I'll just have to get in the bath too."
+    scene boatdaybath2
+    "You gently place Rachel in the tub, being careful not to drop her again."
+    y "I'm really sorry for not holding on tighter at the beach."
+    r "Don't worry about it, the water is already helping.  My ankle doesn't hurt much at all now."
+    g "Come on in and join us [y]!"
+    scene boatdaybath3
+    y "So is there anything else you want to do tonight?  We don't want to send you home all depressed over your boyfriend."
+    r "Yeah actually there is.  Waikiki Nightclub just reopened to the public and I used to go there all the time.  Do you guys maybe wanna go with me tonight?"
+    scene boatdaybath4
+    g "What do you think [y]?  That sounds pretty nice.  I'd actually love to go clubbing too."
+    scene boatdaybath5
+    y "Sure!  After our bath, we can let the others know."
+    scene boatdaybath3
+    r "I need a few minutes before the club to call my boyfriend.  I really am going to break up with him."
+    "Suddenly feeling a little guilty, you wonder if you should tell her that {i}Caelum Besieged{/i} is your game."
+    menu:
+        "Tell her the truth.":
+            jump rachelsurf3a
+        "Keep it to yourself.":
+            jump rachelsurf3b
+
+label rachelsurf3a:
+    scene boatdaybath5
+    $ racheltruth = True
+    "While you had intended to possibly make a move on Rachel tonight, having her break up with her boyfriend is a little too much and it wasn't your intention."
+    y "Hey did you ever watch {i}Aladdin{/i}?"
+    r "Of course, who hasn't?"
+    y "Well there's a scene in there where the Genie warns Aladdin to tell Jasmin the truth."
+    scene boatdaybath4
+    g "Haha, I think I know where you are going with this, but you've chosen the corniest way possible."
+    y "I can't let you break up with your boyfriend over {i}Caelum Besieged{/i}.  I wasn't honest with you about winning a trip here.  {i}Caelum Besieged{/i} is my game."
+    y "As in I made that game, and we used some of the money I made to come on this trip.  So don't break up with your boyfriend because of me."
+    scene boatdaybath3
+    r "Oh wow!  Small world I guess.  Well thanks for being honest with me.  But like I said at the beach, {i}Caelum Besieged{/i} is just another game in a long line of video game addiction."
+    r "Don't feel bad about it and don't feel bad I'm breaking up with Kainalu.  I should have done it a while ago."
+    r "I'd thank you for pushing me in that direction, but instead since you lied at first let's just call it even."
+    scene boatdaybath5
+    y "Sounds good.  Now let's go find the others and get ready for the club!"
+    r "Ummm, I don't actually have a dress here.  I'll need to go back and get one."
+    g "No worries.  I know Katrina packed more than one.  I'll go get her."
+    if dompractice == 1:
+        jump racheldress1
+    else:
+        jump racheldress2
+
+label rachelsurf3b:
+    $ racheltruth = False
+    g "Do you know what might help you take your mind off your loser boyfriend?"
+    r "What?"
+    g "[y]'s dick!"
+    r "Excuse me?"
+    g "I'm just saying that if it were me, seeing another guy's dick would make me feel better."
+    r "Ummm, I don't know."
+    scene boatdaybath5
+    g "Pull it out [y]!  Trust me on this.  Some gratuitous nudity will always put someone in a better mood."
+    scene boatdaybath6
+    "Not really sure where Gianna is going with this you decide to play along."
+    "You stand up and slowly lower your shorts."
+    "Rachel shifts into a more upright position, clearly ready to get a good look."
+    scene boatdaybath7
+    "Your cock springs free and Rachel's eyes kind of cross.  Like she wants to look at it but at the same time she wants to look away."
+    "It's actually a pretty funny expression."
+    "Then you notice Gianna staring at it."
+    y "Hey!  Was this really about you wanting to see my cock, Gianna!"
+    g "Ok, yeah you got me!  I got in the tub naked and thought you guys were going to as well!  I had to get you back a little!"
+    y "Ha!  Ok, let's go find the others and get ready for the club!"
+    r "Ummm, I don't actually have a dress here.  I'll need to go back and get one."
+    g "No worries.  I know Katrina packed more than one.  I'll go get her."
+    if dompractice == 1:
+        jump racheldress1
+    else:
+        jump racheldress2
+
+label racheldress1:
+    scene clubbing1
+    kat "So Gianna tells me Rachel needs to borrow a dress."
+    y "Yeah, she mentioned you might have one."
+    kat "Yeah, I have a couple here in my suitcase we can try."
+    kat "One of them is particularly revealing.  I want you to try to get her to wear it."
+    y "You mean using the psychology tricks again."
+    kat "I don't like calling them tricks, but yeah.  This is a great opportunity to practice."
+    kat "Hey Rachel, I'm here with the dresses.  Come on out of the bathroom."
+    scene clubbing5
+    "As soon as Rachel comes through the door you don't waste any time."
+    "You invade her personal space and try to lock eyes with her."
+    "She tenses up but doesn't pull away."
+    "It seems like she might be thinking about how mad she is with her boyfriend, how excited she is to go to the club again, and there!  She's happy to be making new friends!"
+    scene clubbing4
+    "You latch onto that thought and focus on thinking of her hugging you."
+    "You feel her arms start to wrap around you."
+    y "Sorry, I didn't mean to startle you or anything.  You just looked so cute in your bikini that I wanted to give you a quick hug."
+    "She blinks and takes a deep breath."
+    r "Wow, that was like the most intense hug I ever had.  I don't know what came over me."
+    y "Katrina tells me she has a dress you'd look really hot in.  Will you please try it on for me?"
+    r "Sure [y]!  Of course!"
+    scene clubbing3
+    "She heads back into the bathroom with the dress and comes out a moment later."
+    r "It doesn't leave much to the imagination."
+    y "I love it.  You are going to wear it tonight."
+    r "Ok, I'll wear it for you [y]."
+    y "Go find Gianna and tell her we're almost ready."
+    scene clubbing1
+    "She leaves and Katrina turns to you."
+    kat "Nice job [y]!  It was great you didn't hesitate when she first came out.  That can screw up everything."
+    kat "I also liked how close you got.  Your height is an advantage and the closer you get to someone the taller you seem.  I'm kind of envious of that."
+    y "You could get taller high heels."
+    kat "Haha, now you're thinking!"
+    kat "This was a fun exercise in getting people to do what you want.  Hopefully, we'll get more opportunities like this.  It's really making me happy teaching you this stuff!"
+    y "I'm having fun too!  I'm not really a dominating person by nature, but I think that makes it more exhilarating when I'm in the moment!"
+    kat "Now let's hit the club!"
+    jump clubbing1
+
+label racheldress2:
+    scene clubbing1
+    kat "So Gianna tells me Rachel needs to borrow a dress."
+    y "Yeah, she mentioned you might have one."
+    kat "Yeah, I have a couple here in my suitcase we can try."
+    kat "One of them is particularly revealing.  Want to bet if I can get her to wear it or not?"
+    y "Nah!  That'd be a suckers bet."
+    kat "Ha, well I'm gonna do it anyway.  You'll thank me when you see her in it."
+    kat "Hey Rachel, I'm here with the dresses.  Come on out of the bathroom."
+    scene clubbing2
+    "Rachel comes out and Katrina fixes her with a piercing gaze."
+    kat "Rachel!  I have an incredibly slutty dress you can borrow tonight."
+    r "Sounds nice, I can't wait to see it."
+    kat "It's super revealing.  You can see up your whole side.  You can't wear any panties with it either."
+    r "Ok, can I try it on?"
+    kat "I don't have shoes that match either.  You'll have to wear my pink ones."
+    r "I don't mind."
+    "From where you are standing it seems like Katrina's words are trying to convince Rachel not to wear the dress, but her eyes and posture are telling her something completely different."
+    scene clubbing1
+    "Rachel goes back into the bathroom to change and Katrina turns towards you."
+    kat "That was almost disappointingly easy!"
+    scene clubbing3
+    r "Well, what do you guys think?"
+    kat "It's even sluttier on you than I imagined."
+    r "Tonight is going to be great!  Are we ready to go?"
+    kat "Yes, let's go meet the others in the foyer."
+    jump clubbing1
+
+label clubbing1:
+    scene clubbing6
+    define t = Character("Tessa", color="#ffff00")
+    e "It's great this place is in walking distance, and not so far that my feet break wearing these heels."
+    r "Yeah, the house you guys picked is great.  It's close to everything!"
+    y "Katrina picked it for us."
+    r "She must have really done her research!"
+    r "We should be getting there right as it opens.  Back before COVID, there'd already be a line, but I doubt if many people will be there yet."
+    scene nightclubd
+    "You arrive and it's really empty like Rachel said it might be."
+    scene nightclubb
+    "Seeing lights shining down on an empty dance floor gives you an eerie feeling."
+    scene nightclubc
+    "It looks like there's not even a bartender on duty yet."
+    scene nightcluba
+    "You move towards the dance floor and a couple more people trickle in as you start to dance."
+    scene clubbing7
+    "The girls pair off and you end up with Rachel."
+    r "You're a pretty good dancer, [y]!"
+    y "No, trust me it's all you!  I can tell you must have come here a lot with moves like yours!"
+    r "Hey, do you get the feeling that zombies might be about to attack us?"
+    y "Haha, yeah a little.  I was just thinking with how empty this place is it kind of feels like we might be surviving a zombie apocalypse."
+    r "Being close to you like this reminds me of the movie.  At any second I feel like zombies are gonna get us!"
+    y "And then we'll hear the director's voice yelling for Timmy!"
+    r "Haha, yeah for real!"
+    scene clubbing10
+    g "Let me get a couple of pictures to send to you later [y] so you can remember this!"
+    "Emily dances up behind you and sandwiched between the two girls you imagine this might make a good profile picture for social media."
+    scene clubbing8
+    "You look over at Kendra and Katrina who appear to be having fun."
+    "Kendra is meeting Katrina's gaze, but you notice it's not having the same effect on her as you've seen it have on some others."
+    "The blonde in back of them looks a bit familiar too."
+    "Suddenly she notices your group and comes dancing over."
+    if bribestewardess == True:
+        jump clubbing2a
+    else:
+        jump clubbing2b
+
+label clubbing2a:
+    scene clubbing9
+    st "Hey!  {i}Caelum Besieged{/i} guy!  [y] right?"
+    y "Yeah that's me.  Oh, I recognize you!  You were the Stewardess on our flight here!"
+    t "My name's Tessa by the way."
+    y "Nice to meet you again."
+    t "Thanks again for sending me that sword!"
+    y "No problem!  Thanks again for rescuing my friend Kendra here from a fate worse than death!"
+    k "Yeah, seriously thank you!  The glares I was getting in coach were unbearable!"
+    y "Who's the guy back there.  He looks kind of upset."
+    t "Just some guy who asked me to dance.  I guess he's upset because there are what, like ten people here and you are literally dancing with five girls, well six if you count me."
+    t "Anyway, hit me up in the game if you want to play some {i}Caelum Besieged{/i}.  Do you ever play your own game?  And hit me up there too even if you want to hang out in real life.  Turns out Hawaii is boring since COVID."
+    jump clubbing3
+
+label clubbing2b:
+    st "Hey, you guys were on the plane right?"
+    y "We did come here on a plane, yeah."
+    st "Oh you probably don't recognize me.  I was your Stewardess.  I remember you since fewer people are traveling lately and young attractive people in first-class tend to stand out anyway."
+    t "My name's Tessa by the way."
+    y "Nice to meet you."
+    y "Who's the guy back there.  He looks kind of upset."
+    t "Just some guy who asked me to dance.  I guess he's upset because there are what, like ten people here and you are literally dancing with five girls, well six if you count me."
+    t "Anyway, I just wanted to say hi and tell you that you and your group of friends look fun, so if you want to hang out give me a call."
+    "She slips you a note with her phone number on it.  You wonder if she has a bunch of these she passes out to random guys in clubs."
+    jump clubbing3
+
+label clubbing3:
+    scene clubbing12
+    "You decide to get everyone some drinks and head up to the bar with Rachel and Gianna.  There's an old man there who seems a little out of place."
+    define v = Character("Victor", color="#ffff00")
+    v "Rachel, is that you sweetie?"
+    r "Hi Victor!  Let me introduce you to [y] and Gianna, some new friends I've made.  What are you doing up at the bar?"
+    scene clubbing11
+    v "It's a sad story.  I had to let nearly everyone working here go.  We were closed for months and I had no money left to pay anyone."
+    v "Now that we've reopened I need to put out ads to refill the positions, but I'm afraid most of my old employees have probably moved on by now to other jobs."
+    v "If you want a job Rachel, I'll hire you on the spot right now."
+    scene clubbing12
+    r "That's not what you said when I applied a year ago.  What was it?  Something about no experience and too young...."
+    v "You were fresh off the bus back then.  I could tell a mile away you just moved here because you were in love with the idea of a Hawaiian lifestyle and nearly everyone who does that gives up and goes back home."
+    r "Well, as you can see I didn't give up.  I got a job as a maid and I've stuck with it."
+    scene clubbing11
+    v "I know, I know, I was wrong ok.  Seeing you coming in here over the past year I've gotten to know you a little and I wish I'd hired you originally."
+    v "Anyway, think it over if you want to work here.  I'll pay you more than the maid job."
+    v "The first round of drinks are on the house as my way of apologizing.  What can I get ya?"
+    scene clubbing12
+    y "We had the best Mai Tai's ever on our boat tour today, so I'm thinking this time let's go with Tequila Sunrises."
+    v "A fine choice!  One of my personal favorites."
+    if bribestewardess == True:
+        jump clubbing4
+    else:
+        jump clubbing5
+
+label clubbing4:
+    scene clubbing8
+    "You enjoy more drinks and dancing."
+    "Your gaze keeps coming back to rest on Kendra and Katrina."
+    "It looks like Katrina is still trying to catch Kendra's eye, but Kendra is acting no different from how she normally does."
+    scene nightclubphone1
+    "Kendra pulls out her phone from somewhere which you guess must have been set to vibrate."
+    k "Hi Daddy!  We're at a club.  It's almost empty in here.  It feels almost surreal."
+    "Katrina dances up closer behind Kendra and starts whispering to her."
+    k "Hang on a sec Daddy."
+    k "Katrina, stop that!  I want to take this call real quick."
+    scene nightclubphone2
+    "Kendra walks away to the corner of the club leaving Katrina standing there all alone."
+    kat "Well that didn't work.  Back to the drawing board."
+    jump clubbing5
+label clubbing5:
+    scene clubbing13
+    r "That was a blast!  Thanks, everybody for coming out and cheering me up!"
+    g "Are you going to take that job the owner offered you?"
+    r "I'll think about it.  I will need the extra money to get a place on my own.  It'll be so nice to not rely on Kainalu anymore."
+    k "So what do you guys want to do now?  I'm not ready for bed just yet."
+    e "How about you reenact the zombie movie for us?"
+    y "I thought you didn't want any spoilers."
+    e "I changed my mind!"
+    kat "What if we compromise.  You do your part, but at the part where the zombies show up you just pretend like they don't."
+    r "Ok I guess.  It'll be a really short reenactment though."
+    jump reenactment
+
+label reenactment:
+    scene reenact1
+    "When you get back you all change into the outfits you wore for the zombie movie and Emily and Katrina change into pajamas."
+    k "I guess the TV room is a good choice since you kind of get a movie night but live this time!"
+    e "Undead you mean!"
+    kat "No, we said no zombies are coming remember?"
+    scene reenact2
+    r "Ok, let me set the stage.  Surf Dude here, [y] that is, has just won a huge surfing competition."
+    g "And we're the beach sluts who get to congratulate him!"
+    k "Haha, beach sluts!  That cracks me up so much!!  I'm gonna be playing the part of the director as well so you get the full effect!"
+    scene reenact3
+    k "Get in a sitting position Surf Dude!"
+    y "But I don't have a chair Mr. Director!"
+    k "It's called {i}acting{/i} son!  We'll CGI one in later maybe."
+    "You get in position and the girls rub all over you."
+    scene reenact4
+    "They don't actually put much weight on you so your quads don't burn as bad as last time."
+    e "Wow this is great!  How does it feel with three topless girls rubbing all over you Surf Dude?"
+    k "SHUT YOUR DAMN MOUTH TIMMY!"
+    "You, Rachel, and Gianna crack up!"
+    e "Ha, who's Timmy?"
+    k "ONE MORE PEEP OUT OF YOU AND I'll SEND YOU TO A TIMEOUT BEHIND THE MAKEUP TENT TIMMY!"
+    scene reenact7
+    "Like in the movie, you slide Rachel down onto the ground and start making out with her."
+    "Kendra and Gianna begin rubbing all over her body and she moans."
+    "Gianna pulls off her bikini bottoms and then does the same to Rachel's."
+    r "Isn't this where the director yells cut because the zombies are coming."
+    g "Shhh, remember the zombies aren't coming this time."
+    r "But that means....."
+    scene reenact8
+    "You and Gianna slide Rachel up so that she's straddling your face."
+    "You lower her down and start eating her pussy."
+    r "Oh god, I didn't realize what it would mean if the zombies don't attack."
+    "Add that to the list of quotes you never expected to hear a girl say while you eat her out!"
+    "Before she can say more though Gianna puts her tongue in Rachel's mouth."
+    "Meanwhile Kendra kisses up up both of your thighs and then takes your dick in her mouth."
+    scene reenact9
+    "Once you are nice and lubed up with Kendra's saliva you and Gianna reposition Rachel again."
+    "She doesn't protest as your dick slides in inch by inch."
+    "Gianna begins lightly massaging from Rachel's belly button to yours and back again, gliding her hand over your dick in the middle as it pumps in and out of Rachel."
+    "Kendra kisses you and the heat of the moment fogs up your sunglasses."
+    scene reenact10
+    g "I can feel [y]'s dick through your belly Rachel!"
+    g "Wow, he's getting really deep."
+    r "So deep!  I've never felt it so deep."
+    g "Come inside of her [y]!  I want to see if I can feel your dick throbbing like this!"
+    "Needing no more encouragement you release inside of Rachel!"
+    g "Wow!  You are cumming so much!  I can feel it!"
+    r "I should be the one saying that.  You've really stretched me out!"
+    scene reenact11
+    e "Well I guess there's no point in calling for an encore.  You exhausted them [y]!"
+    kat "I look forward to seeing the real version when it comes out on Blu-ray."
+    k "I doubt if it'll even go on Blu-ray.  Probably just streaming services only."
+    kat "We'll sign up for a free-trial then and cancel after we watch it."
+    scene reenact12
+    "After a few minutes, the girls collect themselves and head to their rooms, leaving you alone with Katrina."
+    $ renpy.end_replay()
+    if katharem == True:
+        jump endofboatday1a
+    if dompractice == 1:
+        jump endofboatday1b
+    else:
+        jump endofboatday1c
+
+label endofboatday1a:
+    kat "Well that certainly was fun!  Tonight really did feel like you have a harem!"
+    y "Yeah, it really did."
+    kat "Are you feeling happy?"
+    y "Really happy!"
+    kat "Good!"
+    y "How'd it go with Kendra at the club by the way.  It looked like she got a call from her dad like you were waiting for."
+    kat "That didn't go like I thought at all.  I was so sure that her rebellious nature against her dad would work to my advantage and I'd finally get in her head a little."
+    kat "She left me hanging though.  I enjoy a challenge though.  I'll figure her out somehow!"
+    y "Good luck with that.  I was trying to figure her out for years in order to start a relationship.  Then just during this trip, everything seemed to fall into place all of a sudden at random."
+    kat "Yeah, I'm thinking about that too.  Anyway, I'm off to bed.  I have something special planned for tomorrow for you and Kendra.  I already know Gianna and Emily will refuse, so I only bought three tickets."
+    y "Sounds exciting!  I'll wait and be surprised then!  Good night."
+    jump endofboatday2
+
+label endofboatday1b:
+    kat "Well that certainly was fun!  Tonight really did feel like you have a harem!"
+    y "Yeah, it really did."
+    kat "Are you feeling happy?"
+    y "Really happy!"
+    kat "Good!  Do you feel guilty about breaking up Rachel and her boyfriend and then fucking her on the same day?"
+    y "No, not really.  I made a plan to control what her boyfriend was going to do and then I made a plan to control what she was going to do and everything fell into place."
+    y "I mostly just feel proud of myself.  Does that make sense?"
+    kat "It makes perfect sense.  I live for feeling like that!  It's why I got into psychology to begin with.  I get off on that feeling of control."
+    kat "I know I said it earlier, [y], but I'm seriously happy you are taking an interest in the same things as me now."
+    kat "Back when I gave you the choice of having me help you make a harem or you trying to do so on your own while I find some way to be happy on my own, well that was dumb of me."
+    kat "I'm actually way happier you chose secret option C and are learning to dominate people and control them with your actions.  I think this could be the start of a wonderful relationship."
+    kat "What I mean to say is I could see us becoming best friends.  I don't mean it in a cringy friendzone sort of way.  I mean I really think we could truly be best friends on a deep and intimate level."
+    y "That actually sounds really nice Katrina."
+    kat "Anyway, I'm off to bed.  I have something special planned for tomorrow for you and Kendra.  I already know Gianna and Emily will refuse, so I only bought three tickets."
+    y "Sounds exciting!  I'll wait and be surprised then!  Good night."
+    jump endofboatday2
+
+label endofboatday1c:
+    kat "Well that certainly was fun!  Tonight really did feel like you have a harem!"
+    y "Yeah, it really did."
+    kat "Are you feeling happy?"
+    y "Really happy!"
+    kat "I wanted to warn you though, I'm not sure Kendra was really into what just happened."
+    y "What makes you say that?"
+    kat "She didn't take off her bikini bottoms."
+    y "We made out though, even after I ate out Rachel."
+    kat "That does mean something, yeah, but I'm just saying to be careful about how you approach building this harem of yours if you want Kendra in it as well."
+    y "Ok Katrina, thanks for the advice."
+    kat "Anyway, I'm off to bed.  I have something special planned for tomorrow for you and Kendra.  I already know Gianna and Emily will refuse, so I only bought three tickets."
+    y "Sounds exciting!  I'll wait and be surprised then!  Good night."
+    if confidence > 2:
+        jump foyermaid
+    else:
+        jump endofboatday2
+
+label foyermaid:
+    scene foyermaid1
+    "Still feeling the thrill of having fucked both Alii and Rachel in the same day, you stroll around the house too excited to sleep."
+    "You come across Rachel in the foyer."
+    y "What are you doing back in your maid uniform and dusting the foyer.  You don't need to clean up around here.  We're friends now and it's late at night."
+    scene foyermaid2
+    r "Oh, hey [y].  Well, I just broke up with my boyfriend over the phone.  I guess I just wasn't sure what to do next.  Before I knew it I was tidying up."
+    r "Gianna said I could sleep in here on the couch, I hope you don't mind."
+    scene foyermaid3
+    y "Of course not, go right ahead!"
+    y "You look really sexy in your maid uniform by the way?"
+    scene foyermaid2
+    r "Oh really?  Didn't get enough earlier huh?  Are you here for round two?"
+    scene foyermaid3
+    y "Sounds like you're the one ready for round two.  That was clearly you propositioning me!"
+    y "I will say though that I'd really like to fuck you in that outfit."
+    r "Sounds like fun!  Let's do it!"
+    scene foyermaid4
+    r "[y]!  You are amazing!  Your cock is so much bigger than my ex-boyfriends!"
+    y "It's good you are already calling him your ex.  That loser didn't realize what he had!"
+    r "So deep!  So deep!  This is so good!"
+    scene foyermaid5
+    "You thrust into her harder and harder."
+    "Her pussy is nice and slick from you cumming inside her earlier."
+    r "I'M CUMMING!!!!"
+    scene foyermaid4
+    "She cums all over your cock, but you don't slow down."
+    y "Who is better, me or your ex?"
+    r "You are better, [y]!  You are so much better!"
+    y "Tell me something you've never done with him that you want to try."
+    r "I've never swallowed.  Not for him or anyone."
+    scene foyermaid6
+    "You pull out and stand in front of her."
+    y "You're going to do it for me."
+    r "Yes, [y]!"
+    "She takes your cock in her mouth and bobs her head up and down."
+    "Moments later you release into the back of her throat and she swallows every drop."
+    scene foyermaid7
+    r "I can't believe I did that."
+    y "It was great, Rachel!  I'm glad I was the first guy you did that for."
+    r "This was a really great day.  I've known I was going to have to break off my relationship for a long time now, but I couldn't have imagined it being as easy and guilt-free as it turned out to be."
+    y "I'm glad we could help you today.  If you start feeling sad or anything just let me or Gianna know."
+    r "I'll do that, [y]."
+    y "I'm going to try to get some sleep.  If this foyer is too drafty or anything let me know and I'll switch with you and you can use my room."
+    r "It's fine.  I'll start the electric fireplace if I get cold."
+    y "See you tomorrow then."
+    jump endofboatday2
+
+label endofboatday2:
+    scene mbath3
+    "It's been a long day and you decide to relax in the tub."
+    "It was crazy everything that happened with Alii and winning the contest and then with Rachel and her now ex-boyfriend."
+    "Every day here in Hawaii has been such a wild ride.  You wonder what tomorrow holds."
+
+label lastdaychapter4:
+    scene nightmovie6
+    "You wake up really early to a text from Emily."
+    e "[y]!  Wake up sleepy head!  I'm doing an early morning stream.  Come join me! Pleeeeeaaaaasssseeee!"
+    "You look around and see that it's so early that it's still dark out."
+    y "Sorry Emily, still sleeping."
+    e "C'mon, it's like 11 AM back home!"
+    "A picture starts to load."
+    scene twitchselfie1
+    y "I'm not on that schedule anymore."
+    e "I'm wearing my sexy panties...."
+    "Another picture starts to load."
+    scene twitchselfie2
+    e "Underboob?"
+    y "Fine, I'll be there in a few minutes."
+    if katharem == True:
+        jump threestreaming1
+    else:
+        jump twostreaming1
+
+label threestreaming1:
+    scene 3streaming1
+    "By the time you get down to the game room the sun is starting to rise."
+    y "Hey Katrina, I'm glad to see Emily dragged you out of bed too!"
+    kat "I was up anyway.  Still getting used to the new timezone."
+    e "So I thought we'd pick up with a streaming lesson for Katrina where we left off."
+    kat "Oh you mean with you cumming on my fingers?"
+    e "She's kidding, [y]."
+    kat "No I'm not.  Remember our agreement too.  Now tell [y] the truth."
+    e "Ok, listen [y], something kind of happened after the last stream.  Things got a little crazy and I ended up making a silly bet with Katrina."
+    kat "Tell him the rest of it."
+    e "She made me cum and now I have to do whatever she says the rest of the trip."
+    "You already knew all this from watching through Katrina's {i}unofficial{/i} stream through her phone and iPad, but it's hot hearing Emily being forced to say it out loud."
+    e "What I meant by picking up where we left off though is that we'd start you back at the end of the dungeon you left off on."
+    kat "Oh why didn't you say so?  Ok, give me your glasses."
+    scene 3streaming2
+    "Katrina takes over and starts playing."
+    "Emily does most of the interacting with the chat."
+    "It's still so early that after a while you feel yourself starting to doze off."
+    scene 3streaming3
+    "Emily suddenly lets out a gasp."
+    e "Katrina, mute the mic, quick!"
+    e "Oh my god!  You are wearing {i}sexy{/i} underwear too!"
+    scene 3streaming4
+    e "Bahahahahahahaha!!!!!"
+    y "I thought you'd like that!  I bought them after our last stream before we came here.  I was waiting for the perfect moment to surprise you!"
+    e "That's hilarious, [y]!"
+    kat "It looked like [y] was about to fall asleep there.  How about we get you more involved."
+    y "What do you mean?"
+    if katdom < 2:
+        jump threestreaming2a
+    else:
+        jump threestreaming2b
+
+label threestreaming2a:
+    scene 3streaming2
+    kat "Emily, let [y] have a turn with the headset and switch seats."
+    scene 3streamlowfemdom1
+    "As soon as she does Katrina pulls your shorts down and tells Emily to suck your cock.  Then she unmutes the mics."
+    y "Ummm, hi chat!  Sorry if I seem a little out of it.  It's really early in the morning here in Hawaii."
+    "Some of the chat is already asking where Emily went.  Katrina is not playing anymore, instead she's focusing more on what you and Emily are doing."
+    "Not sure what to do, you try to think as best you can with what little blood still remains in your brain."
+    y "How about we do a giveaway for a brand new mount in {i}Caelum Besieged{/i}?"
+    y "I just developed it yesterday.  It's a surfboard!"
+    y "Hang on a second, I have an email here about it from a beta tester named Kainalu2000."
+    y "I haven't read it yet, let's see together what it says."
+    y "Dear {i}Caelum Besieged{/i} Admin Team.  Thanks so much for letting me test the new surfboard mount.  I had a really difficult day yesterday."
+    y "My girlfriend broke up with me and I saw pictures she posted online of her dancing with some guy at a club.  I bet she fucked him."
+    y "Being the first to test the surfboard made me feel a lot better though.  It works great for crossing shallow rivers.  I was able to move from area to area a lot more smoothly."
+    y "Ok that's the end of the email.  Poor guy!  I'm so glad I made him feel better by helping him get over his problems with his girlfriend by picking him as a beta tester."
+    kat "Yeah you're such a nice guy, [y], a real saint!"
+    y "The first twenty people to type {i}f{/i} in the chat for poor Kainalu2000 get a code to unlock it."
+    scene 3streamlowfemdom2
+    "Looking at Emily's viewscreen you see her head bobbing dangerously close to where she could be seen."
+    "Not wanting her to accidentally get banned, you selflessly push her down onto her knees."
+    "Katrina helps."
+    "Thankfully you don't have to distract the chat as much since Katrina resumes playing the game."
+    "With her left hand though she pushes Emily's head further and further down."
+    scene 3streamlowfemdom3
+    "Eventually Emily is pushed so far down that she's deepthroating you."
+    "Katrina does not let her up even as you feel yourself about to release."
+    "Emily, not having anywhere to go swallows every drop.  Only then does Katrina release her hold on the back of Emily's head."
+    scene 3streamlowfemdombonus
+    "Emily's hand darts out and snatches her glasses back from Katrina, but she doesn't take her mouth off your cock."
+    "Looks like she has a little rebelliousness left in her."
+    "Finally she sucks out the last few drops and you give her back her headset and trade places."
+    "You notice her hesitate though and then also hand her glasses back to Katrina."
+    scene 3streaming2
+    e "Sorry about that chat, I'm back.  I was just getting breakfast really quick."
+    scene 3streaming3
+    "You slyly slip your boxers back on and the rest of the stream passes by in a blink."
+    "Afterwards Emily invites you to the electronics store to try to claim the warranty on her binoculars."
+    jump drone1
+
+label threestreaming2b:
+    kat "[y], get under the table, you're not even on-screen sitting way over there anyway.  Slide your new sexy boxers off and let's have a little fun."
+    scene 3streaming5
+    "You do as you're told and get under the table."
+    "The girls unmute and go back to interacting with the chat."
+    "Still feeling sleepy you close your eyes and relax."
+    "You try to count the feet that are massaging you all over your chest and dick.  It feels like three maybe, so you guess Emily is getting involved."
+    scene 3streaming6
+    "You lean your head back and feel Katrina's hand.  It feels like her fingers are moving pretty fast."
+    "You vaguely hear Emily telling chat goodbye and that she'll be on later."
+    "Then you feel what you think are four feet pushing you to the floor."
+    scene 3streaming10
+    e "I can't believe [y] is letting us do this to him!"
+    kat "Oh he loves it!"
+    "You feel a foot rubbing against your face."
+    e "I didn't know you were so submissive [y]!  I'm seeing a whole new side of you.  Emily laughs, but not the cheerful laugh she used when she saw your boxers.  It sounds more like Katrina's usual laugh."
+    scene 3streaming11
+    y "Yeah, I guess I am."
+    "You reach up and begin lightly stroking the back of Emily's leg."
+    "Emily laughs again."
+    if cosplay == False:
+        jump threestreaming3a
+    else:
+        jump threestreaming3b
+
+label threestreaming3a:
+    e "[y], you remember in the shower when I wanted to do that cosplay and you said no?  Well, we're totally doing it now after all!"
+    y "Ok Emily."
+    $ cosplay = True
+    jump threestreaming3b
+
+label threestreaming3b:
+    e "Should we let him cum Katrina?"
+    kat "No, maybe next time the three of us get together if he's good."
+    e "Ok, in that case, go get dressed, [y].  The electronics store where I got my binoculars is opening soon and I want to try to claim the warranty.  You are coming with me."
+    jump drone1
+
+label twostreaming1:
+    scene 2streaming1
+    "You join Emily and she starts up her stream."
+    e "Good morning chat!  It's bright and early here in Hawaii!"
+    e "Well maybe not the bight part yet!  The sun is only just starting to rise!"
+    scene 2streaming2
+    e "You guys remember [y] right?  Creator of {i}Caelum Besieged{/i} and friend of the channel."
+    e "Maybe if we're good we'll do some more giveaways."
+    scene 3streaming3
+    "Suddenly Emily looks down where your shirt has ridden up and sees what you are wearing."
+    "She quickly mutes her mic."
+    scene 2streaming3
+    e "Hahahahaha!  I can't believe we are both wearing sexy underwear!"
+    y "Yeah, I bought it after I saw you in yours and thought I'd surprise you for a laugh!"
+    e "Well it worked, that's so great, [y]!  You have the best sense of humor!"
+    scene 2streaming1
+    "Emily unmutes."
+    e "Sorry about that chat.  We were just discussing the giveaway real quick."
+    e "[y], why don't you tell the chat what you just told me?"
+    "Thinking fast since you weren't actually discussing the giveaway, you realize that you do have something."
+    y "How about we do a giveaway for a brand new mount in {i}Caelum Besieged{/i}?"
+    y "I just developed it yesterday.  It's a surfboard!"
+    scene 2streaming2
+    y "Hang on a second, I have an email here about it from a beta tester named Kainalu2000."
+    y "I haven't read it yet, let's see together what it says."
+    y "Dear {i}Caelum Besieged{/i} Admin Team.  Thanks so much for letting me test the new surfboard mount.  I had a really difficult day yesterday."
+    y "My girlfriend broke up with me and I saw pictures she posted online of her dancing with some guy at a club.  I bet she fucked him."
+    y "Being the first to test the surfboard made me feel a lot better though.  It works great for crossing shallow rivers.  I was able to move from area to area a lot more smoothly."
+    y "Ok, that's the end of the email.  Poor guy!  I'm so glad I made him feel better by helping him get over his problems with his girlfriend by picking him as a beta tester."
+    e "The first twenty people to type {i}f{/i} in the chat for poor Kainalu2000 get a code to unlock it."
+    scene 2streaming4
+    "You decide that you'll be the one playing today so you switch seats."
+    "You quickly cop a feel of Emily's inner thigh before you take the mouse.  She does the same to you."
+    "You slide off your shorts and hatch a plan to go further."
+    scene 2streaming5
+    y "We're going to try something we and probably a lot of you guys did as kids when you had a friend over."
+    y "I'm going to play using the mouse and Emily is going to play using my keyboard.  Meanwhile, we'll be showing off my own character which has a lot of experimental and new items I'm testing."
+    e "You hear that guys?  We'll be the first to see some new items!"
+    "You place Emily's free hand on your dick and then take hold of the mouse."
+    "Your character is so overpowered that even with the handicap of two people who aren't in sync controlling it, it still dominates."
+    "That leaves you free to enjoy the hand job that Emily is now giving you."
+    e "This is awesome!"
+    "You assume she's talking about your cock and not your character in-game, but maybe she's talking about both.  That would be ok too."
+    scene 2streaming6
+    "After easily clearing the hardest dungeon in the game, you decide to pull Emily onto your lap to finger her through her panties."
+    y "Emily, why don't you tell the chat what you thought about those items we used and maybe some features you'd like to see added."
+    e "Ummm, it was like so OP!  The weapons, the armor, everything!"
+    e "All the enemies died in a single hit and we didn't take any damage, so I guess we need to make some tougher dungeons or something."
+    e "Hey I see all of you saying in chat that [y] is clearly looking at my boobs!"
+    e "It's not like you guys don't do that every day though!  I know how you boys are!"
+    e "You're being naughty though, [y].  You better stop or I'll have to punish you!"
+    scene 2streaming7
+    y "Ok, I'll stop looking at your boobs.  You slide her panties off and position her above your cock and slowly begin lowering her."
+    y "So we need a new dungeon to explore.  Maybe something like a dark, wet cave."
+    e "Ummm, yeah, this is amazing!  I mean, that would be amazing!"
+    e "Yeah chat, I know I'm sitting on his lap.  You didn't like he was looking at my boobs.  Now the poor guy can only see my back!"
+    scene 2streaming8
+    "The head of your cock reaches Emily's cervix with about two inches of your cock to spare.  She's really tight too."
+    "Too bad you can't bounce her up and down though, then her chat would catch on to what was going on."
+    e "Ok, chat this has been fun, and congrats to those who won the new surfboard mount, but I gotta go so some morning stretching now."
+    e "See ya next time"
+    scene 2streaming7
+    "Emily logs off and you start wildly bouncing her up and down."
+    e "We almost got caught, [y]!"
+    y "Yeah, I bet some of them suspected!"
+    "The stream is off but her camera and view panel are still on so you watch yourselves on the monitor while you have sex."
+    e "I'm cumming!!!!!"
+    "Her already incredibly tight pussy tightens even more as she orgasms and you can't help but release deep inside of her."
+    scene 2streaming9
+    "She pulls off of your lap and takes a few steps back."
+    e "That was so awesome!  Risky sex like this is the best!  I hope we got away with it!"
+    y "I think we did.  We can go back and watch the stream if you want to check if anything was visible."
+    "You notice your cum isn't leaking out of Emily.  You came so deep it must have all gone into her womb and now her tight little pussy is holding it there."
+    e "Nah, I don't want to rewatch it.  The mystery is hot too!  And I was hoping you'd come with me in a bit to the electronics store."
+    e "I want to try to claim the warranty on my binoculars."
+    y "Sure, I'll go get changed and we can be there when the store opens."
+    $ renpy.end_replay()
+    jump drone1
+
+label drone1:
+    scene electronicsstore6
+    e "Thanks for coming with me, [y]!  Hopefully, I can convince them to honor the warranty."
+    y "Are you sure I was the right one to bring along?  I bet Katrina could convince them a lot easier."
+    e "I did ask her for some tips if they say they don't believe me when I say I lost it."
+    e "Their warranty was quite generous though, it even said no questions asked."
+    e "I guess they figure most people who buy from them are tourists who are long before anything gets lost or broken."
+    y "Yeah, I'm sure you're right about that."
+    scene electronicsstore
+    y "I'm surprised they sell binoculars.  Yours didn't look high tech or anything."
+    e "I was surprised too, but this was the first store I found selling them, so I got them here."
+    define o = Character("Olivia", color="#ffff00")
+    scene electronicsstore2
+    o "Hey guys, my name is Olivia.  What can I do for you this morning?"
+    e "Hi Olivia, I was in here a couple days ago and bought a pair of binoculars as well as a warranty."
+    e "Well I kind of lost them and the warranty said I could get store credit if they were lost or broken."
+    o "Oh dear!  What happened?"
+    e "It said no questions asked."
+    o "Oops!  You got me!  It was just a natural reaction out of curiosity.  Of course, you can have the store credit."
+    e "Oh, in that case, I dropped them in the ocean while I was grabbing hold of [y] here so he didn't fall overboard."
+    o "Ok, so $40 in store credit.  Let me know if you want to use it to buy another pair or maybe something else."
+    scene electronicsstore5
+    e "[y], I just realized I don't actually need anything else here.  We already used the binoculars for what we needed them for.  Do you need any computer parts or anything?"
+    y "No, my computer is already top of the line."
+    e "Yeah, mine too.  I upgrade it every year to keep streaming."
+    scene electronicsstore2
+    y "Unless, Olivia, do you have any of the new Nvidia GTX 3080's?"
+    o "No, sorry sir, they were sold out before we could order any and we haven't been able to stock them yet."
+    e "That would've been way more than forty bucks anyway."
+    y "Yeah, but nearly everything here is more than $40.  We'd just pay the difference.  Want to look at the drones or something?"
+    e "Sure!"
+    o "We carry one that's top of the line.  With so many girls in bikinis down at the beach, it's great for spying.... I mean, it's great for bird watching and stuff."
+    scene electronicsstore3
+    "Olivia brings it out and begins a demonstration."
+    o "It even comes with this great VR headset so you can see what the drone is seeing.  It can stream directly to a computer or other smart device as well with an app that's included."
+    e "Wow!  This thing looks super high tech!  Could I try it for a minute?"
+    scene electronicsstore4
+    o "Just don't release the level-out switch so it can't accidentally go up or down.  I'd probably get fired if we crash it in the store."
+    e "[y]!  This is so cool!  I could spy on anybody with this!  Or you could use it to spy on me and there would be no way I could get away!"
+    e "I'm sure it's hella expensive though!"
+    o "It is, yeah."
+    y "Not even trying to sugar coat it?"
+    o "No point, it's really expensive.  I'd look like a fool trying to convince you it's not."
+    e "Can I have a minute in private with my friend?"
+    o "Sure."
+    scene electronicsstore5
+    e "I'll be honest, I really want it, but I can't afford it."
+    e "Is there any way at all you'd consider going in for half and then we'll just share it until I can pay you back?"
+    y "Ok, but on one condition.  We need to get two of the VR headsets so that whoever is using it the other one can be included too."
+    e "Deal!"
+    scene electronicsstore2
+    e "Olivia, we want the drone and I'll be using my store credit and we'll split the cost half and half over my credit card and his."
+    o "Sure thing!  I'll ring you up and box it up for you."
+    y "Two VR of the VR headsets too."
+    o "No problem sir!"
+    scene electronicsstore7
+    e "Be super careful, [y]!  Do not drop that!"
+    y "Don't worry, Emily, I've got it!"
+    y "It's not actually that heavy.  They build these to be light so they can fly you know."
+    e "I know that I would kick you if you drop it!"
+    scene electronicsstore8
+    e "Hey look, an Italian place and it looks like it's already open!  Can I treat you to breakfast?"
+    y "A piada for breakfast?  Sure, why not!"
+    jump droneskinnydipping
+
+label droneskinnydipping:
+    scene dronepool1
+    kat "What the fuck is that?"
+    k "Help!  Some creeper is spying on us!"
+    g "I'll go get something to throw at it!"
+    scene dronepool2
+    e "Well well well!  What do we have here?  Looks like three sexy ladies decided to do a little skinny dipping while we were gone."
+    k "Emily!!!"
+    e "Look at the new toy me and [y] got!"
+    y "Careful Emily, you're about to walk into the pool"
+    e "That's why I have my trusty seeing-eye dog."
+    y "Not a dog."
+    g "Hey [y], is your hand on Emily's ass?"
+    scene dronepool3
+    y "Yep, one of the perks of being her seeing-eye assistant is that I guide her however I want."
+    scene dronepool5
+    kat "Where did you get that thing anyway?"
+    scene dronepool3
+    e "At the electronics store.  I used my store credit from my binoculars warranty."
+    scene dronepool6
+    k "That must have cost way more than the binoculars."
+    e "It did, yeah.  [y] and I split the difference half and half."
+    scene dronepool7
+    g "Does that mean [y] is going to be out spying with this thing too."
+    e "Maybe a little.  When I get bored with it that is."
+    g "Are you recording us right now?"
+    e "No, it's not streaming to my computer yet.  I just wanted to show it off."
+    scene dronepool6
+    k "Good, I'd rather not have you taking nude videos of me Emily.  If any of this turns up online, I know where you live."
+    scene dronepool5
+    kat "So you've gone to the store twice and the first time you left with binoculars and the second time you left with a spy drone."
+    kat "What do you think that says about you, Emily?"
+    scene dronepool4
+    e "Don't analyze my brain Katrina, it's far too complex!  It's just coincidence that two items used for observing things came from the same store."
+    e "But if I must make a conclusion.... I'm curious!"
+    scene dronepool3
+    kat "Curious?  Well, I guess that's the nicest way of saying you show stalker-like tendencies."
+    e "Anyway, I need to go hook this up to my computer.  See you later!"
+    e "With my new toy."
+    "You hear her whisper."
+    scene dronepool5
+    kat "[y], we'll be leaving in a bit for our daily Hawaiian adventure.  Go do whatever you need to do to get ready and I'll tell you what we're doing once we're in the car."
+    y "Have you told Kendra what we're doing?"
+    scene dronepool6
+    k "Yeah, I'm in on it too.  Don't worry, I'm sure you'll love it!"
+    k "But just in case, yeah we better wait until you're in the car before we spill the beans."
+    jump skydiving1
+
+label skydiving1:
+    scene skydiving1
+    "Around noon you leave with Kendra and Katrina to go skydiving.  You now know why she didn't tell you the night before what you'd be doing."
+    "You'd have had plenty of time to convince yourself to chicken out just like Gianna and Emily."
+    y "So World War II-style skydiving?  With a parachute hanging off my ass?"
+    define p = Character("Old Pilot", color="#ffff00")
+    p "That's right son!"
+    y "But in a seaplane?"
+    p "We do a water landin' and that there yeller life preserver will keep you afloat while I land and get ya."
+    scene skydiving3
+    kat "I thought going to see Pearl Harbor would be too depressing, but I still wanted us to do something World War II-related while we were here."
+    y "Aren't we supposed to be certified to skydive or something?  I thought on your first jump you are strapped to a professional instructor."
+    p "We kinda do things old fashioned around here son."
+    y "Kendra, Katrina?  You guys are ok with this?"
+    k "Yep!  C'mon [y]!  You only live once!  I told you I wanted to build up your confidence.  Katrina and I came up with this adventure together!"
+    scene skydiving2
+    y "Fuck fuck fuck fuck fuck!  I can't believe I'm about to do this!"
+    k "Why don't you sit up front, [y]?  That way you can be the first to jump out!"
+    y "The first to fall to my death you mean!"
+    kat "It'll be fine!  Has anyone ever died on one of your jumps Mr. Pilot?"
+    p "Nope, my butt parachute won't fail ya son!"
+    scene skydiving4
+    "Moments later you are airborne."
+    "The ocean looks a long way down.  There might be sharks in there too.  Or squids.  Or that false killer whale waiting to get revenge for making him think he had found his mate."
+    scene skydiving5
+    k "We're landing in water, [y].  Even if you jumped without a parachute you'd just land with a big splash like you jumped off a high dive and you'd be fine."
+    y "That's fucking bullshit Kendra and you know it.  At this height, we'd splatter like we were hitting concrete."
+    scene skydiving6
+    p "That's right son, you'd be deader than dead."
+    p "But like I told ya, the butt parachute won't fail."
+    y "What even is a butt parachute?  When it opens is my butt gonna be high to the sky while I bend in half with my head dangling down by my feet."
+    p "Not if ya got a strong core!  Core muscles are the most important son."
+    scene skydiving5
+    y "Katrina, I need one of your psychological tricks right now to calm down.  I'm scared shitless!"
+    kat "I dunno, take a deep breath I guess?"
+    y "All those tricks and that's all you got for me?"
+    kat "Don't look down?"
+    k "Ha, good one Katrina!"
+    scene skydiving6
+    p "We're here!  Time to jump son!"
+    y "Where is here?  All I see is the sky!"
+    scene skydiving7
+    "The pilot presses a button and your door swings open."
+    p "Pull the little string on your butt chute about five seconds after you jump out."
+    y "Now we're shortening it to butt chute?  Do you know what a butt chute sounds like?  It sounds like another way to say asshole!"
+    k "Ha, good one [y]!"
+    y "I don't even know if I'm looking at the sky or at the water.  Everything is just blue."
+    kat "Like that {i}Eiffel 65{/i} song!"
+    y "Katrina, I swear if I die with that song stuck in my head now I will haunt you for all time!"
+    y "Fine fine!  Confidence right?  Well here goes nothing!"
+    "PLEASE SAVE YOUR GAME"
+    "If you've liked this game and aren't already supporting, please consider supporting me on Patreon at www.patreon.com/obrecht13.  It's only $3 for the current version of the game and it'd really help me a lot."
+    "If you are already supporting.  Thanks!  I really appreciate you!"
     return
