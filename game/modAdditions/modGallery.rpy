@@ -49,6 +49,8 @@ label galleryNameChange:
     default persistent.y = ""
     if persistent.y == "":
         $ persistent.y = renpy.input("Answer with your name.", default="Kyle")
+
+    $ scopeDict = {"y":persistent.y}
     return
 
 screen sceneGalleryMenu():
